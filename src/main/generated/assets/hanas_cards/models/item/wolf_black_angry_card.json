@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "hanas_cards:item/wolf_black_angry_card"
+  }
+}

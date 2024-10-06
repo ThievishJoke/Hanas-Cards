@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "hanas_cards",
+  "version": "${version}",
+  "name": "Hanas Blocks",
+  "description": "Adds neat new collectables to the game!",
+  "authors": [
+    "BaLLducked"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+  "license": "CC0-1.0",
+  "icon": "assets/hanas_cards/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.hanas_cards.HanasCardsMod"
+    ],
+    "client": [
+      "net.hanas_cards.HanasCardsClient"
+    ],
+    "fabric-datagen": [
+      "net.hanas_cards.HanasCardsDataGenerator"
+    ]
+  },
+  "mixins": [
+    "hanas_cardgame.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.2",
+    "minecraft": "~1.21",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
