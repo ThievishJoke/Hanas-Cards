@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "id": "hanas_cards",
   "version": "${version}",
-  "name": "Hanas Blocks",
+  "name": "Hanas Cards",
   "description": "Adds neat new collectables to the game!",
   "authors": [
     "BaLLducked"
