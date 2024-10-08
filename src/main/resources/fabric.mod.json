@@ -8,10 +8,11 @@
     "BaLLducked"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "homepage": "https://github.com/ThievishJoke/Hanas-Cards/wiki",
+    "sources": "https://github.com/ThievishJoke/Hanas-Cards",
+    "issues": "https://github.com/ThievishJoke/Hanas-Cards/issues"
   },
-  "license": "CC0-1.0",
+  "license": "LGPL-3.0",
   "icon": "assets/hanas_cards/icon.png",
   "environment": "*",
   "entrypoints": {
