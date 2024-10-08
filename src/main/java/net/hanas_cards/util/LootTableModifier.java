@@ -1,7 +1,6 @@
 package net.hanas_cards.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
-import net.hanas_cards.HanasCardsMod;
 import net.hanas_cards.item.CardModItems;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.LootTable;
@@ -12,7 +11,6 @@ import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
 import net.minecraft.predicate.entity.EntityPredicate;
-import net.minecraft.registry.tag.EntityTypeTags;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
