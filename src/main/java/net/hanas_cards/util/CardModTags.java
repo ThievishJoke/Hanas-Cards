@@ -16,12 +16,22 @@ public class CardModTags {
     }
 
     public static class Entities {
-        // Mob
+        // Hostility Based
         public static final TagKey<EntityType<?>> PASSIVE_MOB_TAG = createTag("passive_mob");
         public static final TagKey<EntityType<?>> NEUTRAL_MOB_TAG = createTag("neutral_mob");
         public static final TagKey<EntityType<?>> HOSTILE_MOB_TAG = createTag("hostile_mob");
+
+        // Dimension
+        public static final TagKey<EntityType<?>> OVERWORLD_MOB_TAG = createTag("overworld_mob_tag");
+        public static final TagKey<EntityType<?>> NETHER_MOB_TAG = createTag("neutral_mob_tag");
+        public static final TagKey<EntityType<?>> END_MOB_TAG = createTag("hostile_mob_tag");
+
+        // Boss
         public static final TagKey<EntityType<?>> BOSS_MOB_TAG = createTag("boss_mob");
+        
+        // Mob
         public static final TagKey<EntityType<?>> MOB_TAG = createTag("mob_tag");
+
 
 
         private static TagKey<EntityType<?>> createTag(String name) {

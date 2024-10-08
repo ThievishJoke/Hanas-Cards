@@ -25,7 +25,7 @@ public class LootTableModifier {
     }
 
     private static void addCardPackLoot(LootTable.Builder lootTableBuilder) {
-        LootPool customPool = LootPool.builder()
+        LootPool series_one_packPool = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModItems.SERIES_ONE_CARD_PACK)
                         .conditionally(KilledByPlayerLootCondition.builder())
@@ -35,8 +35,41 @@ public class LootTableModifier {
                         .weight(1))
                 .rolls(BinomialLootNumberProvider.create(1, 0.01F))
                 .build();
+        LootPool overworld_packPool = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
+                .with(ItemEntry.builder(CardModItems.OVERWORLD_MOB_CARD_PACK)
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
+                                EntityPredicate.Builder.create().type(CardModTags.Entities.OVERWORLD_MOB_TAG))
+                        )
+                        .weight(1))
+                .rolls(BinomialLootNumberProvider.create(1, 0.025F))
+                .build();
+        LootPool nether_packPool = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
+                .with(ItemEntry.builder(CardModItems.NETHER_MOB_CARD_PACK)
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
+                                EntityPredicate.Builder.create().type(CardModTags.Entities.NETHER_MOB_TAG))
+                        )
+                        .weight(1))
+                .rolls(BinomialLootNumberProvider.create(1, 0.025F))
+                .build();
+        LootPool end_packPool = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
+                .with(ItemEntry.builder(CardModItems.END_MOB_CARD_PACK)
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
+                                EntityPredicate.Builder.create().type(CardModTags.Entities.END_MOB_TAG))
+                        )
+                        .weight(1))
+                .rolls(BinomialLootNumberProvider.create(1, 0.025F))
+                .build();
 
-        lootTableBuilder.pool(customPool);
+        lootTableBuilder.pool(series_one_packPool);
+        lootTableBuilder.pool(overworld_packPool);
+        lootTableBuilder.pool(nether_packPool);
+        lootTableBuilder.pool(end_packPool);
         LOGGER.info("Added custom loot pool to loot table");
     }
 }

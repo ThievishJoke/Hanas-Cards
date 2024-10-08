@@ -26,6 +26,9 @@ import static net.hanas_cards.util.CustomCardRarity.*;
 //todo add slimed mob pack (slime cow, slime chicken, slime, ect.) (Slimed pack update)
 //todo add golden mob pack (golden chicken, golden cow, golden frog, ect.) (Golden pack update)
 //todo add minecraft earth all variants (muddy pig, ect.) (Minecraft earth pack update)
+//todo
+// dev cards
+// block cards
 
 //todo mod integration???
 

@@ -2,7 +2,13 @@
   "tag.hanas_cards.passive_mob": "Passive Mobs",
   "tag.hanas_cards.neutral_mob": "Neutral Mobs",
   "tag.hanas_cards.hostile_mob": "Hostile Mobs",
+
+  "tag.hanas_cards.overworld_mob": "Passive Mobs",
+  "tag.hanas_cards.nether_mob": "Neutral Mobs",
+  "tag.hanas_cards.end_mob": "Hostile Mobs",
+
   "tag.hanas_cards.boss_mob": "Boss Mobs",
+
   "tag.hanas_cards.mob_tag": "Mobs",
 
   "tag.hanas_cards.common_cards": "Common Cards",
