@@ -18,6 +18,11 @@ public class CardModTags {
     public static class Entities {
         // Mob
         public static final TagKey<EntityType<?>> PASSIVE_MOB_TAG = createTag("passive_mob");
+        public static final TagKey<EntityType<?>> NEUTRAL_MOB_TAG = createTag("neutral_mob");
+        public static final TagKey<EntityType<?>> HOSTILE_MOB_TAG = createTag("hostile_mob");
+        public static final TagKey<EntityType<?>> BOSS_MOB_TAG = createTag("boss_mob");
+        public static final TagKey<EntityType<?>> MOB_TAG = createTag("mob_tag");
+
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(HanasCardsMod.MOD_ID, name));

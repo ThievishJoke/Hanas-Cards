@@ -3,11 +3,7 @@ package net.hanas_cards;
 import net.fabricmc.api.ModInitializer;
 import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.item.CardModItemGroups;
-import net.minecraft.loot.LootPool;
-import net.minecraft.loot.condition.KilledByPlayerLootCondition;
-import net.minecraft.loot.entry.ItemEntry;
-import net.minecraft.loot.provider.number.BinomialLootNumberProvider;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
+import net.hanas_cards.util.LootTableModifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -22,16 +18,7 @@ public class HanasCardsMod implements ModInitializer {
         CardModItems.registerSheepCards();
         CardModItems.registerVillagerCards();
         CardModItems.registerShulkerCards();
+        LootTableModifier.registerLootTableEvents();
 
-        LootTableEvents.MODIFY.register((resourceLocation, lootTableBuilder, source, registries) -> {
-                LootPool customPool = LootPool.builder()
-                        .with(ItemEntry.builder(CardModItems.SERIES_ONE_CARD_PACK)
-                                .conditionally(KilledByPlayerLootCondition.builder())
-                                .weight(50))
-                        .rolls(BinomialLootNumberProvider.create(1, 0.05f))  // 5% chance to drop
-                        .build();
-
-                lootTableBuilder.pool(customPool);
-        });
     }
 }

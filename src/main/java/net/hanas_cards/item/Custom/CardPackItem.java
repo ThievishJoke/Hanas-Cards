@@ -93,9 +93,10 @@ public class CardPackItem extends Item {
         List<ItemStack> items = new ArrayList<>();
 
         for (TagKey<Item> tagKey : tags) {
-            Registries.ITEM.getEntryList(tagKey).ifPresent(cardEntries -> cardEntries.stream()
-                    .map(entry -> new ItemStack(entry.value()))
-                    .forEach(items::add));
+            Registries.ITEM.getEntryList(tagKey).ifPresent(cardEntries ->
+                    cardEntries.stream()
+                        .map(entry -> new ItemStack(entry.value()))
+                        .forEach(items::add));
         }
 
         return items;
