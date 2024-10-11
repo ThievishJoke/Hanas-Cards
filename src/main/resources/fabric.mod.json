@@ -30,12 +30,12 @@
     "hanas_cardgame.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.2",
+    "fabricloader": ">=0.16.5",
     "minecraft": "~1.21",
     "java": ">=21",
     "fabric-api": "*"
   },
   "suggests": {
-    "another-mod": "*"
+    "modmenu": "*"
   }
 }

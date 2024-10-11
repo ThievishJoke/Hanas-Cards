@@ -18,7 +18,7 @@ public class CardItem extends Item {
     private final Rarity rarity;
     private final CustomCardRarity customRarity;
 
-    public CardItem(Item.Settings settings, String dimension, String mob_type, String variant, Rarity rarity) {
+    public CardItem(Settings settings, String dimension, String mob_type, String variant, Rarity rarity) {
         super(settings.rarity(rarity).maxCount(16));
         this.dimension = dimension;
         this.mob_type = mob_type;
@@ -27,7 +27,7 @@ public class CardItem extends Item {
         this.customRarity = null;
     }
 
-    public CardItem(Item.Settings settings, String dimension, String mob_type, String variant, CustomCardRarity customRarity) {
+    public CardItem(Settings settings, String dimension, String mob_type, String variant, CustomCardRarity customRarity) {
         super(settings);
         this.dimension = dimension;
         this.mob_type = mob_type;
@@ -35,6 +35,8 @@ public class CardItem extends Item {
         this.rarity = null;
         this.customRarity = customRarity;
     }
+
+    //todo implement inspect on use
 
     @Override
     public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {

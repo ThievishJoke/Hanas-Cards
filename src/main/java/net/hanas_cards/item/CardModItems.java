@@ -15,22 +15,35 @@ import java.util.Map;
 
 import static net.hanas_cards.util.CustomCardRarity.*;
 
-//todo
-// villager variants (village pack update)
-// evoker, vex, vindicator, pillager, witch, ravager, illusioner, Iceologer (Pillage pack update)
-// elder guardian, guardian, pufferfish, + new ocean mob variants (Sea pack update)
-// panda + variants (Panda pack update)
-// creaking, wither (Spooky pack update)
-// warden, silverfish, llamas, goats, wandering trader, trader llama (Mountain exploration pack update)
-// breeze (Trial pack update)
-//todo add slimed mob pack (slime cow, slime chicken, slime, ect.) (Slimed pack update)
-//todo add golden mob pack (golden chicken, golden cow, golden frog, ect.) (Golden pack update)
-//todo add minecraft earth all variants (muddy pig, ect.) (Minecraft earth pack update)
-//todo
-// dev cards
-// block cards
-
-//todo mod integration???
+/*
+todo
+ small pack updates
+ ----
+ villager variants (village pack update)
+ ----
+ evoker, vex, vindicator, pillager, witch, ravager, illusioner, Iceologer (Pillage pack update)
+ ----
+ elder guardian, guardian, pufferfish, + new ocean mob variants (Sea pack update)
+ ----
+ panda + variants (Panda pack update)
+ ----
+ creaking, wither (Spooky pack update)
+ ----
+ warden, silverfish, llamas, goats, wandering trader, trader llama (Mountain exploration pack update)
+ ----
+ breeze (Trial pack update)
+ ----
+ add slimed mob pack (slime cow, slime chicken, slime, ect.) (Slimed pack update)
+ ----
+ add golden mob pack (golden chicken, golden cow, golden frog, ect.) (Golden pack update)
+ ----
+ add minecraft earth all variants (muddy pig, ect.) (Minecraft earth pack update)
+ ----
+ dev cards
+ block cards
+ item cards
+ mod integration???
+*/
 
 @SuppressWarnings("ALL")
 public class CardModItems {
@@ -77,6 +90,17 @@ public class CardModItems {
                     List.of(
                             TagKey.of(Registries.ITEM.getKey(), Identifier.of("hanas_cards", "series_one_cards"))
                     ))));
+
+
+
+
+
+
+
+
+
+
+
 
     //Overworld
     //Passive
@@ -170,32 +194,25 @@ public class CardModItems {
     public static final Item SNIFFER_CARD = registerItem("sniffer_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Sniffer", "Default", Rarity.RARE));
 
-    // Rabbit
-    public static final Item RABBIT_CARD = registerItem("rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Default", Rarity.COMMON));
-    public static final Item ALBINO_RABBIT_CARD = registerItem("albino_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§fAlbino", Rarity.COMMON));
-    public static final Item BLACK_AND_WHITE_RABBIT_CARD = registerItem("black_and_white_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§8Black §7And §fWhite", Rarity.COMMON));
-    public static final Item BLACK_RABBIT_CARD = registerItem("black_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§8Black", Rarity.COMMON));
-    public static final Item GOLD_RABBIT_CARD = registerItem("gold_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§6Gold", Rarity.COMMON));
-    public static final Item KILLER_RABBIT_CARD = registerItem("killer_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Killer", Rarity.UNCOMMON));
-    public static final Item SALT_AND_PEPPER_RABBIT_CARD = registerItem("salt_and_pepper_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§fSalt §7And §8Pepper", Rarity.COMMON));
-    public static final Item JUMBO_RABBIT_CARD = registerItem("jumbo_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Jumbo", Rarity.RARE));
-    public static final Item DIAMOND_RABBIT_CARD = registerItem("diamond_rabbit_card",
-            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§3Diamond", Rarity.EPIC));
-
-    //Farm Animal
+    //Farm Animals
     //Chicken
     public static final Item CHICKEN_CARD = registerItem("chicken_card",
              new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Default", Rarity.COMMON));
     public static final Item DIAMOND_CHICKEN_CARD = registerItem("diamond_chicken_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "§3Diamond", Rarity.EPIC));
+
+    public static final Item PEARLARIUM_CHICKEN_CARD = registerItem("pearlarium_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Pearlarium", Rarity.RARE));
+    public static final Item PETRAMIUNIUM_CHICKEN_CARD = registerItem("pearlarium_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Petramiunium", Rarity.RARE));
+    public static final Item IRON_CHICKEN_CARD = registerItem("iron_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "§fIron", Rarity.RARE));
+    public static final Item COPPER_CHICKEN_CARD = registerItem("copper_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Copper", Rarity.RARE));
+    public static final Item LAPIS_CHICKEN_CARD = registerItem("lapis_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Lapis", Rarity.RARE));
+    public static final Item QUARTZ_CHICKEN_CARD = registerItem("quartz_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Quartz", Rarity.RARE));
 
     // COW
     public static final Item COW_CARD = registerItem("cow_card",
@@ -208,6 +225,19 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Cow", "§eMoobloom", Rarity.RARE));
     public static final Item WOOLY_COW_CARD = registerItem("wooly_cow_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Cow", "§4Wooly", Rarity.RARE));
+
+    public static final Item PEARLARIUM_COW_CARD = registerItem("pearlarium_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Pearlarium", Rarity.RARE));
+    public static final Item PETRAMIUNIUM_COW_CARD = registerItem("pearlarium_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Petramiunium", Rarity.RARE));
+    public static final Item IRON_COW_CARD = registerItem("iron_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "§fIron", Rarity.RARE));
+    public static final Item COPPER_COW_CARD = registerItem("copper_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Copper", Rarity.RARE));
+    public static final Item LAPIS_COW_CARD = registerItem("lapis_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Lapis", Rarity.RARE));
+    public static final Item QUARTZ_COW_CARD = registerItem("quartz_cow_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Quartz", Rarity.RARE));
 
     // Donkey
     public static final Item DONKEY_CARD = registerItem("donkey_card",
@@ -228,6 +258,39 @@ public class CardModItems {
     // Mule
     public static final Item MULE_CARD = registerItem("mule_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Hybrid", "Default", Rarity.COMMON));
+
+    // Rabbit
+    public static final Item RABBIT_CARD = registerItem("rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Default", Rarity.COMMON));
+    public static final Item ALBINO_RABBIT_CARD = registerItem("albino_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§fAlbino", Rarity.COMMON));
+    public static final Item BLACK_AND_WHITE_RABBIT_CARD = registerItem("black_and_white_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§8Black §7And §fWhite", Rarity.COMMON));
+    public static final Item BLACK_RABBIT_CARD = registerItem("black_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§8Black", Rarity.COMMON));
+    public static final Item GOLD_RABBIT_CARD = registerItem("gold_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§6Gold", Rarity.COMMON));
+    public static final Item KILLER_RABBIT_CARD = registerItem("killer_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Killer", Rarity.UNCOMMON));
+    public static final Item SALT_AND_PEPPER_RABBIT_CARD = registerItem("salt_and_pepper_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§fSalt §7And §8Pepper", Rarity.COMMON));
+    public static final Item JUMBO_RABBIT_CARD = registerItem("jumbo_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§4Jumbo", Rarity.RARE));
+
+    public static final Item DIAMOND_RABBIT_CARD = registerItem("diamond_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§3Diamond", Rarity.EPIC));
+    public static final Item PEARLARIUM_RABBIT_CARD = registerItem("pearlarium_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Pearlarium", Rarity.RARE));
+    public static final Item PETRAMIUNIUM_RABBIT_CARD = registerItem("pearlarium_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Petramiunium", Rarity.RARE));
+    public static final Item IRON_RABBIT_CARD = registerItem("iron_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "§fIron", Rarity.RARE));
+    public static final Item COPPER_RABBIT_CARD = registerItem("copper_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Copper", Rarity.RARE));
+    public static final Item LAPIS_RABBIT_CARD = registerItem("lapis_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Lapis", Rarity.RARE));
+    public static final Item QUARTZ_RABBIT_CARD = registerItem("quartz_rabbit_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Rabbit", "Quartz", Rarity.RARE));
 
     // Sheep
     public static final String[] sheep_colors = {
@@ -271,12 +334,37 @@ public class CardModItems {
         }
     }
 
+    public static final Item PEARLARIUM_SHEEP_CARD = registerItem("pearlarium_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Pearlarium", Rarity.RARE));
+    public static final Item PETRAMIUNIUM_SHEEP_CARD = registerItem("pearlarium_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Petramiunium", Rarity.RARE));
+    public static final Item IRON_SHEEP_CARD = registerItem("iron_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "§fIron", Rarity.RARE));
+    public static final Item COPPER_SHEEP_CARD = registerItem("copper_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Copper", Rarity.RARE));
+    public static final Item LAPIS_SHEEP_CARD = registerItem("lapis_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Lapis", Rarity.RARE));
+    public static final Item QUARTZ_SHEEP_CARD = registerItem("quartz_chicken_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Quartz", Rarity.RARE));
     public static final Item RAINBOW_SHEEP_CARD = registerItem("rainbow_sheep_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "§cR§6A§eI§aN§2B§bO§3W", MYTHIC));
 
     // Pig
     public static final Item PIG_CARD = registerItem("pig_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Default", Rarity.COMMON));
+
+    public static final Item PEARLARIUM_PIG_CARD = registerItem("pearlarium_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Pearlarium", Rarity.RARE));
+    public static final Item PETRAMIUNIUM_PIG_CARD = registerItem("iron_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Petramiunium", Rarity.RARE));
+    public static final Item IRON_PIG_CARD = registerItem("pearlarium_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "§fIron", Rarity.RARE));
+    public static final Item COPPER_PIG_CARD = registerItem("copper_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Copper", Rarity.RARE));
+    public static final Item LAPIS_PIG_CARD = registerItem("lapis_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Lapis", Rarity.RARE));
+    public static final Item QUARTZ_PIG_CARD = registerItem("quartz_pig_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Pig", "Quartz", Rarity.RARE));
 
     // Villager
     public static final String[] villager_card_professions = {
