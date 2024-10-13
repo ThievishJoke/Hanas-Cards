@@ -201,44 +201,20 @@ public class ModModelProvider extends FabricModelProvider {
         //itemModelGenerator.register(CardModItems.TAMED_WOLF_ASHEN_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
         //itemModelGenerator.register(TAMED_WOLF_BLACK_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
 
-        // Ashen
-        for (String color : collar_colors) {
-            String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
-            }
-        }
-        // Black
-        for (String color : collar_colors) {
-            String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
-            }
-        }
-
-        // Woods
-        for (String color : collar_colors) {
-            String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
+        for (String wolfBreed: wolf_breed) {
+            // Ashen
+            for (String color : collar_colors) {
+                String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
+                        color.toLowerCase().replace(" ", "_") + "_card";
+                Item item = CardModItems.get(cardName);
+                if (item != null) {
+                    //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
+                    itemModelGenerator.register(item, Models.GENERATED);
+                    System.out.println("Successfully registered model for: " + cardName);
+                } else {
+                    // Log error
+                    System.err.println("Item not found for: " + cardName + " In ModelProvider");
+                }
             }
         }
 
