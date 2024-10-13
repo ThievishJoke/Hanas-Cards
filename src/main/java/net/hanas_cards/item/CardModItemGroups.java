@@ -178,38 +178,18 @@ public class CardModItemGroups {
                         entries.add(CardModItems.WOLF_STRIPED_ARMOR_CARD);
                         entries.add(CardModItems.WOLF_WOODS_ARMOR_CARD);
 
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed ashen wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
-                            }
-                        }
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed black wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
-                            }
-                        }
-
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed woods wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
+                        for (String wolfBreed: wolf_breed) {
+                            for (String color : collar_colors) {
+                                String cardName = "tamed" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
+                                        color.toLowerCase().replace(" ", "_") + "_card";
+                                Item item = CardModItems.get(cardName);
+                                if (item != null) {
+                                    entries.add(item);
+                                    System.out.println("Successfully added tamed " + wolfBreed + " wolf card: " + cardName);
+                                } else {
+                                    // Error
+                                    System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
+                                }
                             }
                         }
 

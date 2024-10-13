@@ -505,67 +505,36 @@ public class CardModItems {
     //        Identifier.ofVanilla("hanas_cards.collars/collar_red")))
     //;
 
+    public static final String[] wolf_breed = {
+            "Ashen", "Black", "Chestnut", "Pale", "Rusty", "Snowy", "Spotted", "Striped", "Woods"
+    };
+
     public static final String[] collar_colors = {
             "Red", "Orange", "Yellow", "Lime", "Green", "Cyan",
             "Light Blue", "Blue", "Purple", "Magenta", "Pink", "Gray", "Light Gray", "Black", "Brown", "White"
     };
 
     public static void registerTamedWolfCards() {
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
+        for (String wolfBreed : wolf_breed) {
+            {
+                for (String color : collar_colors) {
+                    String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
+                        color.toLowerCase().replace(" ", "_") + "_card";
+                    String collar_color = getWolfCollarColor(color);
+                    String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
+                    String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
 
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "ashen", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_ashen_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Ashen card: " + cardName);
+                    Item tamedWolfCard = new TamedWolfCard(
+                            new Item.Settings(),
+                            "§2Overworld", "Wolf", variant, Rarity.EPIC, wolfBreed.toLowerCase().replace(" ","_"), collar_color,
+                            Identifier.ofVanilla("hanas_cards.item/wolf_" + wolfBreed.toLowerCase().replace(" ","_") + "_card"),
+                            Identifier.ofVanilla(collar_path)
+                    );
+                    System.out.println("Successfully registered Tamed Wolf" + wolfBreed + " card: " + cardName);
 
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
-            }
-        }
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
-
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "black", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_black_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Black card: " + cardName);
-
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
-            }
-        }
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
-
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "woods", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Woods card: " + cardName);
-
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
+                    registerItem(cardName, tamedWolfCard);
+                    ITEMS.put(cardName, tamedWolfCard);
+                }
             }
         }
     }
