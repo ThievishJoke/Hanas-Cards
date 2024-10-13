@@ -1,30 +1,18 @@
 package net.hanas_cards.datagen;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.hanas_cards.item.CardModItems;
-import net.minecraft.data.client.*;
+import net.minecraft.data.client.BlockStateModelGenerator;
+import net.minecraft.data.client.ItemModelGenerator;
+import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
-import java.util.function.BiConsumer;
-import java.util.function.Supplier;
 
 import static net.hanas_cards.item.CardModItems.*;
 
 
 public class ModModelProvider extends FabricModelProvider {
-    private BiConsumer<Identifier, Supplier<JsonElement>> modelCollector;
-
-    public ModModelProvider(FabricDataOutput output) {
-        super(output);
-    }
+    public ModModelProvider(FabricDataOutput output) { super(output); }
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
@@ -149,6 +137,8 @@ public class ModModelProvider extends FabricModelProvider {
             }
         }
 
+
+
         itemModelGenerator.register(CardModItems.IRON_GOLEM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SNOW_GOLEM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SHEARED_SNOW_GOLEM_CARD, Models.GENERATED);
@@ -197,50 +187,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.WOLF_SPOTTED_ARMOR_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WOLF_STRIPED_ARMOR_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WOLF_WOODS_ARMOR_CARD, Models.GENERATED);
-
-        //itemModelGenerator.register(CardModItems.TAMED_WOLF_ASHEN_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-        //itemModelGenerator.register(TAMED_WOLF_BLACK_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-
-        // Ashen
-        for (String color : collar_colors) {
-            String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
-            }
-        }
-        // Black
-        for (String color : collar_colors) {
-            String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
-            }
-        }
-
-        // Woods
-        for (String color : collar_colors) {
-            String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-            Item item = CardModItems.get(cardName);
-            if (item != null) {
-                //itemModelGenerator.register(item, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-                itemModelGenerator.register(item, Models.GENERATED);
-                System.out.println("Successfully registered model for: " + cardName);
-            } else {
-                // Log error
-                System.err.println("Item not found for: " + cardName + " In ModelProvider");
-            }
-        }
 
         itemModelGenerator.register(CardModItems.PHANTOM_CARD, Models.GENERATED);
 

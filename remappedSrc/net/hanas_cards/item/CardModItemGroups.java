@@ -2,7 +2,6 @@ package net.hanas_cards.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hanas_cards.HanasCardsMod;
-import net.hanas_cards.item.Custom.TamedWolfCard;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -10,7 +9,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 
 import static net.hanas_cards.item.CardModItems.*;
 
@@ -177,41 +175,6 @@ public class CardModItemGroups {
                         entries.add(CardModItems.WOLF_SPOTTED_ARMOR_CARD);
                         entries.add(CardModItems.WOLF_STRIPED_ARMOR_CARD);
                         entries.add(CardModItems.WOLF_WOODS_ARMOR_CARD);
-
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed ashen wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
-                            }
-                        }
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed black wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
-                            }
-                        }
-
-                        for (String color : collar_colors) {
-                            String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                            Item item = CardModItems.get(cardName);
-                            if (item != null) {
-                                entries.add(item);
-                                System.out.println("Successfully added tamed woods wolf card: " + cardName);
-                            } else {
-                                // Error
-                                System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
-                            }
-                        }
 
                         entries.add(CardModItems.PHANTOM_CARD);
 

@@ -96,6 +96,17 @@ public class CardModItems {
                             TagKey.of(Registries.ITEM.getKey(), Identifier.of("hanas_cards", "series_two_cards"))
                     ))));
 
+
+
+
+
+
+
+
+
+
+
+
     //Overworld
     //Passive
     // Allay
@@ -488,108 +499,76 @@ public class CardModItems {
     public static final Item WOLF_WOODS_ARMOR_CARD = registerItem("wolf_woods_armor_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Wolf", "§2Armored Wolf (Woods)", Rarity.RARE));
 
-    //public static final Item TAMED_WOLF_ASHEN_CARD = registerItem("tamed_wolf_ashen_card",
-    //        new TamedWolfCard(
-    //        new Item.Settings(),
-    //        "Overworld", "Wolf", "Tamed", Rarity.EPIC, "ashen", "Red",
-    //        Identifier.ofVanilla("wolf_ashen_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red")))
-    //;
+    public static final Item TAMED_WOLF_ASHEN_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Ashen",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_BLACK_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Black",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_CHESTNUT_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Chestnut",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_PALE_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Pale",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_RUSTY_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Rusty",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_SNOWY_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Snowy",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_SPOTTED_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Spotted",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_STRIPED_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Striped",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
+    public static final Item TAMED_WOLF_WOODS_CARD = new TamedWolfCard(
+            new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
+            "Red", "Woods",
+            "hanas_cards:item/wolf_woods_card", // Base texture
+            "hanas_cards:collars/collar_red" // Collar texture
+    );
 
-    //public static final Item TAMED_WOLF_BLACK_CARD = registerItem("tamed_wolf_black_card",
-    //        new TamedWolfCard(
-    //        new Item.Settings(),
-    //        "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "black", "red",
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red")))
-    //;
 
-    public static final String[] collar_colors = {
-            "Red", "Orange", "Yellow", "Lime", "Green", "Cyan",
-            "Light Blue", "Blue", "Purple", "Magenta", "Pink", "Gray", "Light Gray", "Black", "Brown", "White"
-    };
-
-    public static void registerTamedWolfCards() {
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_ashen_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
-
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "ashen", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_ashen_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Ashen card: " + cardName);
-
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
-            }
+    // Wolf Type Color Codes
+    public static String getWolfTypeColorCode(String type) {
+        switch (type) {
+            case "Ashen": return "7";
+            case "Black": return "8";
+            case "Chestnut": return "6";
+            case "Pale": return "f";
+            case "Rusty": return "c";
+            case "Snowy": return "f";
+            case "Spotted": return "7";
+            case "Striped": return "3";
+            case "Woods": return "2";
+            default: return "f";
         }
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_black_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
-
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "black", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_black_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Black card: " + cardName);
-
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
-            }
-        }
-        {
-            for (String color : collar_colors) {
-                String cardName = "tamed_woods_wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
-                String collar_color = getWolfCollarColor(color);
-                String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
-                String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
-
-                Item tamedWolfCard = new TamedWolfCard(
-                        new Item.Settings(),
-                        "§2Overworld", "Wolf", variant, Rarity.EPIC, "woods", collar_color,
-                        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-                        Identifier.ofVanilla(collar_path)
-                );
-                System.out.println("Successfully registered Tamed Wolf Woods card: " + cardName);
-
-                registerItem(cardName, tamedWolfCard);
-                ITEMS.put(cardName, tamedWolfCard);
-            }
-        }
-    }
-
-    public static String getWolfCollarColor(String color) {
-        return switch (color) {
-            case "Red" -> "c";         //0
-            case "Orange" -> "6";      //1
-            case "Yellow" -> "e";      //2
-            case "Lime" -> "a";        //3
-            case "Green" -> "2";       //4
-            case "Cyan" -> "3";        //5
-            case "Light Blue" -> "b";  //6
-            case "Blue" -> "9";        //7
-            case "Purple" -> "5";      //8
-            case "Magenta" -> "d";     //9
-            case "Pink" -> "d";        //10
-            case "Gray" -> "8";        //11
-            case "Light Gray" -> "7";  //12
-            case "Black" -> "8";       //13
-            case "Brown" -> "4";       //14
-            case "White" -> "f";       //15
-            default -> "f";
-        };
     }
 
     //Hostile
@@ -716,49 +695,6 @@ public class CardModItems {
 
     public static final Item SHULKER_CARD = registerItem("shulker_card",
             new CardItem(new Item.Settings(), "§5End", "Shulker", "Default", Rarity.COMMON));
-
-    //public static final Item TAMED_WOLF_CHESTNUT_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "chestnut"
-    //);
-    //public static final Item TAMED_WOLF_PALE_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "pale"
-    //);
-    //public static final Item TAMED_WOLF_RUSTY_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "rusty"
-    //);
-    //public static final Item TAMED_WOLF_SNOWY_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "snowy"
-    //);
-    //public static final Item TAMED_WOLF_SPOTTED_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "spotted"
-    //);
-    //public static final Item TAMED_WOLF_STRIPED_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "striped"
-    //);
-    //public static final Item TAMED_WOLF_WOODS_CARD = new TamedWolfCard(
-    //        Identifier.ofVanilla("hanas_cards.item/wolf_woods_card"),
-    //        Identifier.ofVanilla("hanas_cards.collars/collar_red"),
-    //        new Item.Settings(), "Overworld", "Wolf", "Tamed", Rarity.EPIC,
-    //        "woods"
-    //);
 
     public static Item get(String name) {
         return ITEMS.get(name);
