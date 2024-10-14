@@ -20,7 +20,6 @@ public class LootTableModifier {
     public static void registerLootTableEvents() {
         LootTableEvents.MODIFY.register((resourceLocation, lootTableBuilder, source, registries) -> {
             addCardPackLoot(lootTableBuilder);
-            LOGGER.info("Modified loot table: {}", resourceLocation);  // Log modification
         });
     }
 
@@ -29,19 +28,13 @@ public class LootTableModifier {
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModItems.SERIES_ONE_CARD_PACK)
                         .conditionally(KilledByPlayerLootCondition.builder())
-                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
-                                EntityPredicate.Builder.create().type(CardModTags.Entities.MOB_TAG))
-                        )
                         .weight(1))
-                .rolls(BinomialLootNumberProvider.create(1, 0.01F))
+                .rolls(BinomialLootNumberProvider.create(1, 0.1F))
                 .build();
         LootPool overworld_packPool = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModItems.OVERWORLD_MOB_CARD_PACK)
                         .conditionally(KilledByPlayerLootCondition.builder())
-                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
-                                EntityPredicate.Builder.create().type(CardModTags.Entities.OVERWORLD_MOB_TAG))
-                        )
                         .weight(1))
                 .rolls(BinomialLootNumberProvider.create(1, 0.025F))
                 .build();
@@ -49,9 +42,6 @@ public class LootTableModifier {
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModItems.NETHER_MOB_CARD_PACK)
                         .conditionally(KilledByPlayerLootCondition.builder())
-                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
-                                EntityPredicate.Builder.create().type(CardModTags.Entities.NETHER_MOB_TAG))
-                        )
                         .weight(1))
                 .rolls(BinomialLootNumberProvider.create(1, 0.025F))
                 .build();
@@ -59,9 +49,6 @@ public class LootTableModifier {
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModItems.END_MOB_CARD_PACK)
                         .conditionally(KilledByPlayerLootCondition.builder())
-                        .conditionally(EntityPropertiesLootCondition.builder(LootContext.EntityTarget.THIS,
-                                EntityPredicate.Builder.create().type(CardModTags.Entities.END_MOB_TAG))
-                        )
                         .weight(1))
                 .rolls(BinomialLootNumberProvider.create(1, 0.025F))
                 .build();
