@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hanas_cards:item/series_one_card_pack"
-  }
-}
