@@ -6,14 +6,10 @@ import net.hanas_cards.item.Custom.CardPackItem;
 import net.hanas_cards.item.Custom.FlyingPigCard;
 import net.hanas_cards.item.Custom.TamedWolfCard;
 import net.hanas_cards.util.CustomCardRarity;
-import net.hanas_cards.util.GradingSystem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
