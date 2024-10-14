@@ -13,14 +13,15 @@ public class HanasCardsMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
+
         CardModItemGroups.registerCardModItemGroups();
+
         CardModItems.registerModItems();
         CardModItems.registerSheepCards();
         CardModItems.registerVillagerCards();
         CardModItems.registerTamedWolfCards();
         CardModItems.registerShulkerCards();
+
         LootTableModifier.registerLootTableEvents();
-
-
     }
 }

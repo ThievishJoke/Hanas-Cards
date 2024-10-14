@@ -1,18 +1,13 @@
 package net.hanas_cards.datagen;
 
-import com.google.gson.Gson;
+import net.hanas_cards.item.CardModItems;
+
 import com.google.gson.JsonElement;
-import com.google.gson.JsonObject;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.hanas_cards.item.CardModItems;
 import net.minecraft.data.client.*;
 import net.minecraft.item.Item;
 import net.minecraft.util.Identifier;
-
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Optional;
 import java.util.function.BiConsumer;
 import java.util.function.Supplier;
 
@@ -87,6 +82,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(CardModItems.SNIFFER_CARD, Models.GENERATED);
 
+        // Rabbit
         itemModelGenerator.register(CardModItems.RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.ALBINO_RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.BLACK_AND_WHITE_RABBIT_CARD, Models.GENERATED);
@@ -95,20 +91,50 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.KILLER_RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SALT_AND_PEPPER_RABBIT_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.JUMBO_RABBIT_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.DIAMOND_RABBIT_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.PEARLARIUM_RABBIT_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PETRAMIUNIUM_RABBIT_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.IRON_RABBIT_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.COPPER_RABBIT_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.LAPIS_RABBIT_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.QUARTZ_RABBIT_CARD, Models.GENERATED);
+
+        // Chicken
         itemModelGenerator.register(CardModItems.CHICKEN_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.DIAMOND_CHICKEN_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.PEARLARIUM_CHICKEN_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PETRAMIUNIUM_CHICKEN_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.IRON_CHICKEN_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.COPPER_CHICKEN_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.LAPIS_CHICKEN_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.QUARTZ_CHICKEN_CARD, Models.GENERATED);
+
+        // Cow
         itemModelGenerator.register(CardModItems.COW_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.MOOBLOOM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.RED_MOOSHROOM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.BROWN_MOOSHROOM_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WOOLY_COW_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.PEARLARIUM_COW_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PETRAMIUNIUM_COW_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.IRON_COW_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.COPPER_COW_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.LAPIS_COW_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.QUARTZ_COW_CARD, Models.GENERATED);
+
+        // Donkey
         itemModelGenerator.register(CardModItems.DONKEY_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SADDLED_DONKEY_CARD, Models.GENERATED);
 
+        // Horse
         itemModelGenerator.register(CardModItems.HORSE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.ARMORED_HORSE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SKELETON_HORSE_CARD, Models.GENERATED);
@@ -116,6 +142,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(CardModItems.MULE_CARD, Models.GENERATED);
 
+        // Sheep
         for (String color : sheep_colors) {
             String cardName = color.toLowerCase().replace(" ", "_") + "_sheep_card";
             Item item = CardModItems.get(cardName);
@@ -127,9 +154,28 @@ public class ModModelProvider extends FabricModelProvider {
                 System.err.println("Item not found for: " + cardName + " In ModelProvider");
             }
         }
+
+        itemModelGenerator.register(CardModItems.PEARLARIUM_SHEEP_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PETRAMIUNIUM_SHEEP_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.IRON_SHEEP_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.COPPER_SHEEP_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.LAPIS_SHEEP_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.QUARTZ_SHEEP_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.RAINBOW_SHEEP_CARD, Models.GENERATED);
 
+        // Pig
         itemModelGenerator.register(CardModItems.PIG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.FLYING_PIG_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.PEARLARIUM_PIG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PETRAMIUNIUM_PIG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.IRON_PIG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.COPPER_PIG_CARD, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.LAPIS_PIG_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.QUARTZ_PIG_CARD, Models.GENERATED);
 
         for (String biome : villager_card_biomes) {
             for (String profession : villager_card_professions) {

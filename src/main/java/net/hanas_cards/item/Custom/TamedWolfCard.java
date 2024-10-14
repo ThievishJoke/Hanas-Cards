@@ -4,6 +4,7 @@ import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
+import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
@@ -51,10 +52,10 @@ public class TamedWolfCard extends CardItem {
         return this.collarColor;
     }
 
-    //@Override
-    //public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
-    //    super.appendTooltip(stack, context, tooltip, type);
-    //}
+    @Override
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
+    }
 }
 
 

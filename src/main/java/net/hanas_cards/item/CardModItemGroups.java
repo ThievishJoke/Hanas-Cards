@@ -2,7 +2,6 @@ package net.hanas_cards.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hanas_cards.HanasCardsMod;
-import net.hanas_cards.item.Custom.TamedWolfCard;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -10,7 +9,6 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Rarity;
 
 import static net.hanas_cards.item.CardModItems.*;
 
@@ -72,6 +70,7 @@ public class CardModItemGroups {
 
                         entries.add(CardModItems.SNIFFER_CARD);
 
+                        // Rabbit
                         entries.add(CardModItems.RABBIT_CARD);
                         entries.add(CardModItems.ALBINO_RABBIT_CARD);
                         entries.add(CardModItems.BLACK_AND_WHITE_RABBIT_CARD);
@@ -80,20 +79,49 @@ public class CardModItemGroups {
                         entries.add(CardModItems.KILLER_RABBIT_CARD);
                         entries.add(CardModItems.SALT_AND_PEPPER_RABBIT_CARD);
                         entries.add(CardModItems.JUMBO_RABBIT_CARD);
+
                         entries.add(CardModItems.DIAMOND_RABBIT_CARD);
 
-                        entries.add(CardModItems.CHICKEN_CARD);
-                        entries.add(CardModItems.DIAMOND_CHICKEN_CARD);
+                        entries.add(CardModItems.PEARLARIUM_RABBIT_CARD);
+                        entries.add(CardModItems.PETRAMIUNIUM_RABBIT_CARD);
+                        entries.add(CardModItems.IRON_RABBIT_CARD);
+                        entries.add(CardModItems.COPPER_RABBIT_CARD);
 
+                        entries.add(CardModItems.LAPIS_RABBIT_CARD);
+                        entries.add(CardModItems.QUARTZ_RABBIT_CARD);
+
+                        // Chicken
+                        entries.add(CardModItems.CHICKEN_CARD);
+
+                        entries.add(CardModItems.DIAMOND_CHICKEN_CARD);
+                        entries.add(CardModItems.PEARLARIUM_CHICKEN_CARD);
+                        entries.add(CardModItems.PETRAMIUNIUM_CHICKEN_CARD);
+                        entries.add(CardModItems.IRON_CHICKEN_CARD);
+                        entries.add(CardModItems.COPPER_CHICKEN_CARD);
+
+                        entries.add(CardModItems.LAPIS_CHICKEN_CARD);
+                        entries.add(CardModItems.QUARTZ_CHICKEN_CARD);
+
+                        // Cow
                         entries.add(CardModItems.COW_CARD);
                         entries.add(CardModItems.MOOBLOOM_CARD);
                         entries.add(CardModItems.RED_MOOSHROOM_CARD);
                         entries.add(CardModItems.BROWN_MOOSHROOM_CARD);
                         entries.add(CardModItems.WOOLY_COW_CARD);
 
+                        entries.add(CardModItems.PEARLARIUM_COW_CARD);
+                        entries.add(CardModItems.PETRAMIUNIUM_COW_CARD);
+                        entries.add(CardModItems.IRON_COW_CARD);
+                        entries.add(CardModItems.COPPER_COW_CARD);
+
+                        entries.add(CardModItems.LAPIS_COW_CARD);
+                        entries.add(CardModItems.QUARTZ_COW_CARD);
+
+                        // Donkey
                         entries.add(CardModItems.DONKEY_CARD);
                         entries.add(CardModItems.SADDLED_DONKEY_CARD);
 
+                        // Horse
                         entries.add(CardModItems.HORSE_CARD);
                         entries.add(CardModItems.ARMORED_HORSE_CARD);
                         entries.add(CardModItems.SKELETON_HORSE_CARD);
@@ -101,6 +129,7 @@ public class CardModItemGroups {
 
                         entries.add(CardModItems.MULE_CARD);
 
+                        // Sheep
                         for (String color : sheep_colors) {
                             String cardName = color.toLowerCase().replace(" ", "_") + "_sheep_card";
                             Item item = CardModItems.get(cardName);
@@ -111,9 +140,27 @@ public class CardModItemGroups {
                                 System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
                             }
                         }
+                        entries.add(CardModItems.PEARLARIUM_SHEEP_CARD);
+                        entries.add(CardModItems.PETRAMIUNIUM_SHEEP_CARD);
+                        entries.add(CardModItems.IRON_SHEEP_CARD);
+                        entries.add(CardModItems.COPPER_SHEEP_CARD);
+
+                        entries.add(CardModItems.LAPIS_SHEEP_CARD);
+                        entries.add(CardModItems.QUARTZ_SHEEP_CARD);
+
                         entries.add(CardModItems.RAINBOW_SHEEP_CARD);
 
+                        // Pig
                         entries.add(CardModItems.PIG_CARD);
+                        entries.add(CardModItems.FLYING_PIG_CARD);
+
+                        entries.add(CardModItems.PEARLARIUM_PIG_CARD);
+                        entries.add(CardModItems.PETRAMIUNIUM_PIG_CARD);
+                        entries.add(CardModItems.IRON_PIG_CARD);
+                        entries.add(CardModItems.COPPER_PIG_CARD);
+
+                        entries.add(CardModItems.LAPIS_PIG_CARD);
+                        entries.add(CardModItems.QUARTZ_PIG_CARD);
 
                         for (String biome : villager_card_biomes) {
                             for (String profession : villager_card_professions) {
@@ -180,12 +227,12 @@ public class CardModItemGroups {
 
                         for (String wolfBreed: wolf_breed) {
                             for (String color : collar_colors) {
-                                String cardName = "tamed" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
+                                String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
                                         color.toLowerCase().replace(" ", "_") + "_card";
                                 Item item = CardModItems.get(cardName);
                                 if (item != null) {
                                     entries.add(item);
-                                    System.out.println("Successfully added tamed " + wolfBreed + " wolf card: " + cardName);
+                                    System.out.println("Successfully added tamed " + wolfBreed + " wolf card: " + cardName + "To Item Group");
                                 } else {
                                     // Error
                                     System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
