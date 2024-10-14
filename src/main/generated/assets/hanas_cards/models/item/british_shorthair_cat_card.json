@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hanas_cards:item/british_shorthair_cat_card"
-  }
-}

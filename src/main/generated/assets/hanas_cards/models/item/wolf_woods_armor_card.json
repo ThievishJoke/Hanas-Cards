@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "hanas_cards:item/wolf_woods_armor_card"
-  }
-}
