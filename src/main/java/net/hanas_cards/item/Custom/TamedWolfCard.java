@@ -1,18 +1,12 @@
 package net.hanas_cards.item.Custom;
 
-import net.minecraft.client.resource.language.I18n;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
 import net.minecraft.util.Rarity;
 import net.minecraft.util.Identifier;
-import net.minecraft.world.World;
 
 import java.util.List;
-
-import static net.hanas_cards.item.CardModItems.getWolfCollarColor;
-
 
 public class TamedWolfCard extends CardItem {
     private final String collarColor;
