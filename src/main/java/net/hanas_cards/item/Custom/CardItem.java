@@ -1,14 +1,20 @@
 package net.hanas_cards.item.Custom;
 
-import net.hanas_cards.component.DataComponentTypes;
 import net.hanas_cards.component.CardComponent;
+import net.hanas_cards.component.ModDataComponentTypes;
+import net.hanas_cards.util.CardModTags;
 import net.hanas_cards.util.CustomCardRarity;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.tooltip.TooltipType;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
+import net.minecraft.world.World;
 
 import java.util.List;
 
@@ -66,16 +72,34 @@ public class CardItem extends Item {
     }
 
     // Todo: Implement inspect-on-use behavior
+    @Override
+    public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
+        ItemStack stack = player.getStackInHand(hand);
 
-    private CardComponent getCardComponent(ItemStack stack) {
-        // Check if the stack has the card component
-        var component = stack.getComponents().get(DataComponentTypes.CARD_COMPONENT);
-        // Check if the component is an instance of CardComponent
-        if (component instanceof CardComponent cardComponent) {
-            return cardComponent; // Safe cast to CardComponent
+        if (!world.isClient) {
+            player.sendMessage(Text.literal("Meow!"), true);
+
+            // Check if the stack has a CardComponent
+            CardComponent component = stack.get(ModDataComponentTypes.CARD_COMPONENT);
+
+            if (component != null) {
+                // If the card is already graded, notify the player
+                if (component.getGrading() > 0) {
+                    player.sendMessage(Text.literal("This card is already graded!"), true);
+                    return TypedActionResult.fail(stack);
+                }
+            }
+
+            // If the card is not graded, create a new component with a random grading
+            int newGrading = 1 + world.getRandom().nextInt(5);
+            CardComponent newComponent = new CardComponent(newGrading, "Graded", List.of("tag"));
+
+            stack.set(ModDataComponentTypes.CARD_COMPONENT, newComponent);
+
+            player.sendMessage(Text.literal("Card graded!"), true);
+            return TypedActionResult.success(stack);
         }
-        // Handle the case where the component doesn't exist (return a default or new component)
-        return CardComponent.DEFAULT; // Adjust constructor as needed
+        return super.use(world, player, hand);
     }
 
     @Override
@@ -102,10 +126,8 @@ public class CardItem extends Item {
         tooltip.add(Text.literal("---------------------"));
 
         // Append grading information to the tooltip
-        CardComponent cardComponent = getCardComponent(stack);
-        if (cardComponent != null) {
-            int grading = cardComponent.getGrading();
-            tooltip.add(Text.literal("§fGrading: §7§l" + grading));
+        if (stack.get(ModDataComponentTypes.CARD_COMPONENT) != null) {
+            tooltip.add(Text.literal("§fGrading: §7§l" + stack.get(ModDataComponentTypes.CARD_COMPONENT).getGrading()));
         }
 
         super.appendTooltip(stack, context, tooltip, type);

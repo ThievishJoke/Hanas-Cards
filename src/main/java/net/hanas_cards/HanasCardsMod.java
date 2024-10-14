@@ -1,6 +1,7 @@
 package net.hanas_cards;
 
 import net.fabricmc.api.ModInitializer;
+import net.hanas_cards.component.ModDataComponentTypes;
 import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.item.CardModItemGroups;
 import net.hanas_cards.util.LootTableModifier;
@@ -23,5 +24,7 @@ public class HanasCardsMod implements ModInitializer {
         CardModItems.registerShulkerCards();
 
         LootTableModifier.registerLootTableEvents();
+
+        ModDataComponentTypes.registerDataComponentTypes();
     }
 }

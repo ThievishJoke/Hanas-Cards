@@ -306,11 +306,12 @@ public class CardModItems {
             String variant = "§" + getSheepColorCode(color) + color + " Sheep";
 
             Item sheepCard = new CardItem(new Item.Settings(), "§2Overworld", "Sheep", variant, Rarity.COMMON);
-            System.out.println("Successfully registered sheep card: " + cardName);
+            //System.out.println("Successfully registered sheep card: " + cardName);
 
             registerItem(cardName, sheepCard);
             ITEMS.put(cardName, sheepCard);
         }
+        System.out.println("Successfully registered Sheep Cards");
     }
 
     // Sheep Color Codes
@@ -394,12 +395,13 @@ public class CardModItems {
                 String variant = (biome + " " + profession);
 
                 Item villagerCard = new CardItem(new Item.Settings(), "§2Overworld", "Villager", variant, Rarity.COMMON);
-                System.out.println("Successfully registered villager card: " + cardName);
+                //System.out.println("Successfully registered villager card: " + cardName);
 
                 registerItem(cardName, villagerCard);
                 ITEMS.put(cardName, villagerCard);
             }
         }
+        System.out.println("Successfully registered Villager Cards");
     }
 
     // Golem
@@ -535,13 +537,14 @@ public class CardModItems {
                             Identifier.ofVanilla("hanas_cards.item/wolf_" + wolfBreed.toLowerCase().replace(" ","_") + "_card"),
                             Identifier.ofVanilla(collar_path)
                     );
-                    System.out.println("Successfully registered Tamed Wolf " + wolfBreed + " card: " + cardName);
+                    //System.out.println("Successfully registered Tamed Wolf " + wolfBreed + " card: " + cardName);
 
                     registerItem(cardName, tamedWolfCard);
                     ITEMS.put(cardName, tamedWolfCard);
                 }
             }
         }
+        System.out.println("Successfully registered Tamed Wolf Cards");
     }
 
     public static String getWolfCollarColor(String color) {
@@ -658,11 +661,13 @@ public class CardModItems {
             String variant = "§" + getShulkerColorCode(color) + color + " Shulker";
 
             Item shulkerCard = new CardItem(new Item.Settings(), "§5End", "Shulker", variant, Rarity.COMMON);
-            System.out.println("Successfully registered shulker card: " + cardName);
+
+            //System.out.println("Successfully registered shulker card: " + cardName);
 
             registerItem(cardName, shulkerCard);
             ITEMS.put(cardName, shulkerCard);
         }
+        System.out.println("Successfully registered Shulker Cards");
     }
 
     //Shulker Color Codes
