@@ -2,20 +2,17 @@ package net.hanas_cards.datagen;
 
 import net.hanas_cards.item.CardModItems;
 
-import com.google.gson.JsonElement;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.hanas_cards.item.CardModPacks;
 import net.minecraft.data.client.*;
 import net.minecraft.item.Item;
-import net.minecraft.util.Identifier;
-import java.util.function.BiConsumer;
-import java.util.function.Supplier;
 
 import static net.hanas_cards.item.CardModItems.*;
 
 
 public class ModModelProvider extends FabricModelProvider {
-    private BiConsumer<Identifier, Supplier<JsonElement>> modelCollector;
+    //private BiConsumer<Identifier, Supplier<JsonElement>> modelCollector;
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
@@ -28,14 +25,16 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(CardModItems.RAINBOW_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.RAINBOW_CARD_PACK, Models.GENERATED);
 
-        itemModelGenerator.register(CardModItems.OVERWORLD_MOB_CARD_PACK, Models.GENERATED);
-        itemModelGenerator.register(CardModItems.NETHER_MOB_CARD_PACK, Models.GENERATED);
-        itemModelGenerator.register(CardModItems.END_MOB_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.OVERWORLD_MOB_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.NETHER_MOB_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.END_MOB_CARD_PACK, Models.GENERATED);
 
-        itemModelGenerator.register(CardModItems.SERIES_ONE_CARD_PACK, Models.GENERATED);
-        itemModelGenerator.register(CardModItems.SERIES_TWO_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.SERIES_ONE_CARD_PACK, Models.GENERATED);
+        itemModelGenerator.register(CardModPacks.SERIES_TWO_CARD_PACK, Models.GENERATED);
+
+        itemModelGenerator.register(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ALLAY_CARD, Models.GENERATED);
 

@@ -4,6 +4,7 @@ import net.fabricmc.api.ModInitializer;
 import net.hanas_cards.component.ModDataComponentTypes;
 import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.item.CardModItemGroups;
+import net.hanas_cards.item.CardModPacks;
 import net.hanas_cards.util.LootTableModifier;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -18,6 +19,7 @@ public class HanasCardsMod implements ModInitializer {
         CardModItemGroups.registerCardModItemGroups();
 
         CardModItems.registerModItems();
+        CardModPacks.registerModPacks();
         CardModItems.registerSheepCards();
         CardModItems.registerVillagerCards();
         CardModItems.registerTamedWolfCards();

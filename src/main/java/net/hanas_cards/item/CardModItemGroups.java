@@ -17,13 +17,14 @@ public class CardModItemGroups {
             Identifier.of(HanasCardsMod.MOD_ID, "cards"),
             FabricItemGroup.builder().displayName(Text.translatable("itemgroup.cards"))
             .icon(() -> new ItemStack(CardModItems.LUCY_AXOLOTL_CARD)).entries((displayContext, entries) -> {
-                        entries.add(CardModItems.OVERWORLD_MOB_CARD_PACK);
-                        entries.add(CardModItems.NETHER_MOB_CARD_PACK);
-                        entries.add(CardModItems.END_MOB_CARD_PACK);
+                        entries.add(CardModPacks.OVERWORLD_MOB_CARD_PACK);
+                        entries.add(CardModPacks.NETHER_MOB_CARD_PACK);
+                        entries.add(CardModPacks.END_MOB_CARD_PACK);
 
-                        entries.add(CardModItems.RAINBOW_CARD_PACK);
+                        entries.add(CardModPacks.RAINBOW_CARD_PACK);
 
-                        entries.add(CardModItems.SERIES_ONE_CARD_PACK);
+                        entries.add(CardModPacks.SERIES_ONE_CARD_PACK);
+                        entries.add(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK);
 
                         entries.add(CardModItems.ALLAY_CARD);
 
