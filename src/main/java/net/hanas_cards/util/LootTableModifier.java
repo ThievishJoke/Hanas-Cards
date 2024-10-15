@@ -28,6 +28,13 @@ public class LootTableModifier {
                         .weight(1))
                 .rolls(BinomialLootNumberProvider.create(1, 0.1F))
                 .build();
+        LootPool series_one_expansion_one_card_packPool = LootPool.builder()
+                .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
+                .with(ItemEntry.builder(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK)
+                        .conditionally(KilledByPlayerLootCondition.builder())
+                        .weight(1))
+                .rolls(BinomialLootNumberProvider.create(1, 0.5F))
+                .build();
         LootPool overworld_packPool = LootPool.builder()
                 .rolls(ConstantLootNumberProvider.create(1.0F))  // Set number of rolls
                 .with(ItemEntry.builder(CardModPacks.OVERWORLD_MOB_CARD_PACK)
@@ -51,6 +58,7 @@ public class LootTableModifier {
                 .build();
 
         lootTableBuilder.pool(series_one_packPool);
+        lootTableBuilder.pool(series_one_expansion_one_card_packPool);
         lootTableBuilder.pool(overworld_packPool);
         lootTableBuilder.pool(nether_packPool);
         lootTableBuilder.pool(end_packPool);

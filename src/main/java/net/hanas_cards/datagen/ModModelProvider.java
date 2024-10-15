@@ -48,6 +48,13 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.GREEN_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.MELONOID_AXOLOTL_CARD, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.CACTUS_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.SKELETON_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.PUMPKIN_AXOLOTL_CARD, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.BAT_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ANGRY_BEE_CARD, Models.GENERATED);
@@ -247,7 +254,6 @@ public class ModModelProvider extends FabricModelProvider {
         //itemModelGenerator.register(TAMED_WOLF_BLACK_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
 
         for (String wolfBreed: wolf_breed) {
-            // Ashen
             for (String color : collar_colors) {
                 String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
                         color.toLowerCase().replace(" ", "_") + "_card";

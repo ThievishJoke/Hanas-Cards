@@ -38,6 +38,14 @@ public class CardModItemGroups {
                         entries.add(CardModItems.GREEN_AXOLOTL_CARD);
                         entries.add(CardModItems.MELONOID_AXOLOTL_CARD);
 
+                        entries.add(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD);
+                        entries.add(CardModItems.CACTUS_AXOLOTL_CARD);
+                        entries.add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD);
+                        entries.add(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD);
+
+                        entries.add(CardModItems.SKELETON_AXOLOTL_CARD);
+                        entries.add(CardModItems.PUMPKIN_AXOLOTL_CARD);
+
                         entries.add(CardModItems.BAT_CARD);
 
                         entries.add(CardModItems.ANGRY_BEE_CARD);

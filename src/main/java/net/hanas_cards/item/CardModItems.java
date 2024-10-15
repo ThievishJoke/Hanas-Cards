@@ -81,6 +81,20 @@ public class CardModItems {
     public static final Item MELONOID_AXOLOTL_CARD = registerItem("melonoid_axolotl_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Melonoid", Rarity.RARE));
 
+    public static final Item SCREAMING_LUCY_AXOLOTL_CARD = registerItem("screaming_lucy_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Screaming §dLucy", Rarity.EPIC));
+    public static final Item CACTUS_AXOLOTL_CARD = registerItem("cactus_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "§2Cactus", Rarity.COMMON));
+    public static final Item TWO_TAILED_GLOWING_AXOLOTL_CARD = registerItem("two_tailed_glowing_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Glowing (Two Tailed)", Rarity.RARE));
+    public static final Item ULTRA_VIOLET_AXOLOTL_CARD = registerItem("ultra_violet_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Ultra Violet", Rarity.EPIC));
+
+    public static final Item SKELETON_AXOLOTL_CARD = registerItem("skeleton_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Skeleton", Rarity.UNCOMMON));
+    public static final Item PUMPKIN_AXOLOTL_CARD = registerItem("pumpkin_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Pumpkin", Rarity.UNCOMMON));
+
     // Bat
     public static final Item BAT_CARD = registerItem("bat_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Bat", "§4Default", Rarity.COMMON));
@@ -162,6 +176,7 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "§fIron", Rarity.UNCOMMON));
     public static final Item COPPER_CHICKEN_CARD = registerItem("copper_chicken_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Copper", Rarity.UNCOMMON));
+
     public static final Item LAPIS_CHICKEN_CARD = registerItem("lapis_chicken_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Chicken", "Lapis", Rarity.RARE));
     public static final Item QUARTZ_CHICKEN_CARD = registerItem("quartz_chicken_card",
@@ -187,6 +202,7 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Cow", "§fIron", Rarity.UNCOMMON));
     public static final Item COPPER_COW_CARD = registerItem("copper_cow_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Copper", Rarity.UNCOMMON));
+
     public static final Item LAPIS_COW_CARD = registerItem("lapis_cow_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Cow", "Lapis", Rarity.RARE));
     public static final Item QUARTZ_COW_CARD = registerItem("quartz_cow_card",
@@ -298,6 +314,7 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "§fIron", Rarity.UNCOMMON));
     public static final Item COPPER_SHEEP_CARD = registerItem("copper_sheep_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Copper", Rarity.UNCOMMON));
+
     public static final Item LAPIS_SHEEP_CARD = registerItem("lapis_sheep_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Sheep", "Lapis", Rarity.RARE));
     public static final Item QUARTZ_SHEEP_CARD = registerItem("quartz_sheep_card",
@@ -486,7 +503,7 @@ public class CardModItems {
 
                     Item tamedWolfCard = new TamedWolfCard(
                             new Item.Settings(),
-                            "§2Overworld", "Wolf", variant, Rarity.EPIC, wolfBreed.toLowerCase().replace(" ","_"), collar_color,
+                            "§2Overworld", "Wolf", variant, Rarity.COMMON, wolfBreed.toLowerCase().replace(" ","_"), collar_color,
                             Identifier.ofVanilla("hanas_cards.item/wolf_" + wolfBreed.toLowerCase().replace(" ","_") + "_card"),
                             Identifier.ofVanilla(collar_path)
                     );

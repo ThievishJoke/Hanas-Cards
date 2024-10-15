@@ -23,7 +23,8 @@ public class CardModPacks {
                             TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "uncommon_cards")),
                             TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "rare_cards")),
                             TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "epic_cards")),
-                            TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "mythic_cards"))
+                            TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "mythic_cards")),
+                            TagKey.of((Registries.ITEM.getKey()), Identifier.of("hanas_cards", "legendary_cards"))
                     ))));
     public static final Item OVERWORLD_MOB_CARD_PACK = registerItem("overworld_mob_card_pack",
             new CardPackItem(new CardPackSettings(3,

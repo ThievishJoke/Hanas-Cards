@@ -46,6 +46,7 @@ public class CardModTags {
         public static final TagKey<Item> RARE_CARDS = createTag("rare_cards");
         public static final TagKey<Item> EPIC_CARDS = createTag("epic_cards");
         public static final TagKey<Item> MYTHIC_CARDS = createTag("mythic_cards");
+        public static final TagKey<Item> LEGENDARY = createTag("legendary_cards");
 
         // Hostility Based
         public static final TagKey<Item> PASSIVE_MOB_CARDS = createTag("passive_mob_cards");
@@ -64,6 +65,9 @@ public class CardModTags {
         // Series
         public static final TagKey<Item> SERIES_ONE_CARDS = createTag("series_one_cards");
         public static final TagKey<Item> SERIES_TWO_CARDS = createTag("series_two_cards");
+
+        // Expansions
+        public static final TagKey<Item> SERIES_ONE_EXPANSION_ONE_CARDS = createTag("series_one_expansion_one_cards");
 
 
 
