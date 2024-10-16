@@ -39,7 +39,7 @@ if ($version_id -ne $previous_version_id) {
 
     # Construct the Discord message payload
     $payload = @{
-        content = "A new version has released!`n[Download it here!]($url)"
+        content = "<@&1292982363294269566>`n`nA new version has released!`n[Download it here!]($url)"
     } | ConvertTo-Json
 
     # Send the payload to the Discord webhook
