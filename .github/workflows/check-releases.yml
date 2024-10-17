@@ -20,7 +20,7 @@ jobs:
               cd ${{ github.workspace }}
               .\.github\script.ps1
             env:
-              discordWebhookUrl: ${{ secrets.DISCORD_WEBHOOK_URL }}
+              WEBHOOKURL: ${{ secrets.DISCORD_WEBHOOK_URL }}
             
           - name: Commit & push changes
             run: |

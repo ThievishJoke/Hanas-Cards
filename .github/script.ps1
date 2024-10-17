@@ -1,5 +1,6 @@
 # Define the API endpoint and Discord webhook URL
 $apiUrl = "https://api.modrinth.com/v2/project/ZNLNdYWj/version"
+$discordWebhookUrl = $env:WEBHOOKURL
 
 # Path to the version ID file
 $versionFilePath = ".\.github\version_id.txt"
