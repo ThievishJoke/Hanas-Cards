@@ -862,8 +862,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
         for (String wolfBreed : wolf_breed) {
             for (String color: collar_colors) {
-                String cardName = "tamed_wolf_" + wolfBreed.toLowerCase().replace(" ", "_") + "_" +
-                color.toLowerCase().replace(" ", "_") + "_card";
+                String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ", "_") + "_" +
+                        "wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
                 Item item = CardModItems.get(cardName);
                 if (item != null) {
                     getOrCreateTagBuilder(CardModTags.Items.COMMON_CARDS).add(item);

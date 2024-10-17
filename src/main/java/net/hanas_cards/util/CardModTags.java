@@ -70,7 +70,6 @@ public class CardModTags {
         public static final TagKey<Item> SERIES_ONE_EXPANSION_ONE_CARDS = createTag("series_one_expansion_one_cards");
 
 
-
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(HanasCardsMod.MOD_ID, name));
         }
