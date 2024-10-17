@@ -89,6 +89,8 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Glowing (Two Tailed)", Rarity.RARE));
     public static final Item ULTRA_VIOLET_AXOLOTL_CARD = registerItem("ultra_violet_axolotl_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Ultra Violet", Rarity.EPIC));
+    public static final Item BLACK_AND_RED_AXOLOTL_CARD = registerItem("black_and_red_axolotl_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Black and Red", Rarity.EPIC));
 
     public static final Item SKELETON_AXOLOTL_CARD = registerItem("skeleton_axolotl_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Axolotl", "Skeleton", Rarity.UNCOMMON));
@@ -565,6 +567,8 @@ public class CardModItems {
             new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Husk", Rarity.UNCOMMON));
     public static final Item DROWNED_CARD = registerItem("drowned_card",
             new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Drowned", Rarity.UNCOMMON));
+    public static final Item CYBER_ZOMBIE_CARD = registerItem("cyber_zombie_card",
+            new CardItem(new Item.Settings(), "§2Overworld", "Zombie", "Default", Rarity.RARE));
 
     //Skeleton
     public static final Item SKELETON_CARD = registerItem("skeleton_card",
@@ -613,6 +617,8 @@ public class CardModItems {
     //Ender Dragon
     public static final Item ENDER_DRAGON_CARD = registerItem("ender_dragon_card",
             new CardItem(new Item.Settings(), "§5End", "Dragon", "Default", Rarity.COMMON));
+    public static final Item GLITCHED_ENDER_DRAGON_CARD = registerItem("glitched_ender_dragon_card",
+            new CardItem(new Item.Settings(), "§5End", "Dragon", "Glitched", Rarity.RARE));
     //Enderman
     public static final Item ENDERMAN_CARD = registerItem("enderman_card",
             new CardItem(new Item.Settings(), "§2Overworld §cNether §5End", "Enderman", "Default", Rarity.COMMON));

@@ -2,11 +2,8 @@ package net.hanas_cards.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.hanas_cards.HanasCardsMod;
 import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.util.CardModTags;
-import net.minecraft.data.client.Models;
-import net.minecraft.entity.passive.AllayEntity;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryWrapper;
 
@@ -862,8 +859,8 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         }
         for (String wolfBreed : wolf_breed) {
             for (String color: collar_colors) {
-                String cardName = "tamed_wolf_" + wolfBreed.toLowerCase().replace(" ", "_") + "_" +
-                color.toLowerCase().replace(" ", "_") + "_card";
+                String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ", "_") + "_" +
+                        "wolf_" + color.toLowerCase().replace(" ", "_") + "_card";
                 Item item = CardModItems.get(cardName);
                 if (item != null) {
                     getOrCreateTagBuilder(CardModTags.Items.COMMON_CARDS).add(item);

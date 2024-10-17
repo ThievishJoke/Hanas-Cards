@@ -5,6 +5,7 @@ import net.hanas_cards.item.CardModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.hanas_cards.item.CardModPacks;
+import net.hanas_cards.model.item.CustomCardItemModels;
 import net.minecraft.data.client.*;
 import net.minecraft.item.Item;
 
@@ -12,10 +13,12 @@ import static net.hanas_cards.item.CardModItems.*;
 
 
 public class ModModelProvider extends FabricModelProvider {
-    //private BiConsumer<Identifier, Supplier<JsonElement>> modelCollector;
+
+    private final CustomCardItemModels customModels;
 
     public ModModelProvider(FabricDataOutput output) {
         super(output);
+        this.customModels = new CustomCardItemModels("item/generated"); // Initialize with a parent model
     }
 
     @Override
@@ -40,6 +43,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         itemModelGenerator.register(CardModItems.ARMADILLO_CARD, Models.GENERATED);
 
+        //registerAxolotlCards(itemModelGenerator);
         itemModelGenerator.register(CardModItems.LUCY_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WILD_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.GOLD_AXOLOTL_CARD, Models.GENERATED);
@@ -48,10 +52,12 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.GREEN_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.MELONOID_AXOLOTL_CARD, Models.GENERATED);
 
+
         itemModelGenerator.register(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.CACTUS_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.BLACK_AND_RED_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.SKELETON_AXOLOTL_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.PUMPKIN_AXOLOTL_CARD, Models.GENERATED);
 
@@ -250,9 +256,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.WOLF_STRIPED_ARMOR_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.WOLF_WOODS_ARMOR_CARD, Models.GENERATED);
 
-        //itemModelGenerator.register(CardModItems.TAMED_WOLF_ASHEN_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-        //itemModelGenerator.register(TAMED_WOLF_BLACK_CARD, new Model(Optional.of(Identifier.of("item/tamed_wolf_card")), Optional.empty()));
-
         for (String wolfBreed: wolf_breed) {
             for (String color : collar_colors) {
                 String cardName = "tamed_" + wolfBreed.toLowerCase().replace(" ","_") + "_wolf_" +
@@ -279,6 +282,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.CHARGED_CREEPER_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ZOMBIE_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.CYBER_ZOMBIE_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.HUSK_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.DROWNED_CARD, Models.GENERATED);
 
@@ -305,6 +309,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModItems.ZOMBIFIED_HOGLIN_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ENDER_DRAGON_CARD, Models.GENERATED);
+        itemModelGenerator.register(CardModItems.GLITCHED_ENDER_DRAGON_CARD, Models.GENERATED);
 
         itemModelGenerator.register(CardModItems.ENDERMAN_CARD, Models.GENERATED);
 
@@ -323,4 +328,26 @@ public class ModModelProvider extends FabricModelProvider {
         }
         itemModelGenerator.register(CardModItems.SHULKER_CARD, Models.GENERATED);
     }
+
+    //private void registerAxolotlCards(ItemModelGenerator itemModelGenerator) {
+    //    registerCustomCard(itemModelGenerator, CardModItems.LUCY_AXOLOTL_CARD, "lucy_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.WILD_AXOLOTL_CARD, "wild_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.GOLD_AXOLOTL_CARD, "gold_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.CYAN_AXOLOTL_CARD, "cyan_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.BLUE_AXOLOTL_CARD, "blue_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.GREEN_AXOLOTL_CARD, "green_axolotl_card");
+    //    registerCustomCard(itemModelGenerator, CardModItems.MELONOID_AXOLOTL_CARD, "melonoid_axolotl_card");
+    //}
+
+    //private void registerCustomCard(ItemModelGenerator itemModelGenerator, Item item, String baseTextureName) {
+    //    Identifier baseTexture = Identifier.of("hanas_cards", "item/" + baseTextureName);
+    //    Identifier cardSleeve = Identifier.of("hanas_cards", "sleeve/card_sleeve");
+
+        // Generate the JSON model using your custom class
+    //    Model model = customModels.createSleevedCardModel(baseTexture, null, cardSleeve);
+    //    System.out.println("Custom Model " + model); // Debug output
+
+        // Register the model with the item generator
+    //    itemModelGenerator.register(item, model);
+    //}
 }

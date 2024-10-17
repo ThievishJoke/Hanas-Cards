@@ -33,7 +33,6 @@ public class CardModTags {
         public static final TagKey<EntityType<?>> MOB_TAG = createTag("mob_tag");
 
 
-
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(HanasCardsMod.MOD_ID, name));
         }

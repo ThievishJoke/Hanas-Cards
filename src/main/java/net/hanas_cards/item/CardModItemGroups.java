@@ -41,6 +41,7 @@ public class CardModItemGroups {
                         entries.add(CardModItems.SCREAMING_LUCY_AXOLOTL_CARD);
                         entries.add(CardModItems.CACTUS_AXOLOTL_CARD);
                         entries.add(CardModItems.TWO_TAILED_GLOWING_AXOLOTL_CARD);
+                        entries.add(CardModItems.BLACK_AND_RED_AXOLOTL_CARD);
                         entries.add(CardModItems.ULTRA_VIOLET_AXOLOTL_CARD);
 
                         entries.add(CardModItems.SKELETON_AXOLOTL_CARD);
@@ -259,6 +260,7 @@ public class CardModItemGroups {
                         entries.add(CardModItems.CHARGED_CREEPER_CARD);
 
                         entries.add(CardModItems.ZOMBIE_CARD);
+                        entries.add(CardModItems.CYBER_ZOMBIE_CARD);
                         entries.add(CardModItems.HUSK_CARD);
                         entries.add(CardModItems.DROWNED_CARD);
 
@@ -285,6 +287,7 @@ public class CardModItemGroups {
                         entries.add(CardModItems.ZOMBIFIED_HOGLIN_CARD);
 
                         entries.add(CardModItems.ENDER_DRAGON_CARD);
+                        entries.add(CardModItems.GLITCHED_ENDER_DRAGON_CARD);
 
                         entries.add(CardModItems.ENDERMAN_CARD);
 
