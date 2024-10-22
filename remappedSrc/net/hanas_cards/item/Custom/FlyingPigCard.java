@@ -2,12 +2,11 @@ package net.hanas_cards.item.Custom;
 
 import net.hanas_cards.util.CustomCardRarity;
 import net.minecraft.client.gui.screen.Screen;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
@@ -18,10 +17,10 @@ public class FlyingPigCard extends CardItem {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, @NotNull List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.translatableWithFallback("tooltip.hanas_cards.flying_pig_card", "I can't believe it").formatted(Formatting.GOLD));
         // Add Card Item tooltip
-        super.appendTooltip(stack, world, tooltip, context);
+        super.appendTooltip(stack, context, tooltip, type);
 
         if(!Screen.hasShiftDown()) {
             tooltip.add(Text.translatable("tooltip.hanas_cards.flying_pig_card.shift"));

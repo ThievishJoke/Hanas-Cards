@@ -4,17 +4,15 @@ import net.hanas_cards.component.CardComponent;
 import net.hanas_cards.component.ModDataComponentTypes;
 import net.hanas_cards.util.CustomCardRarity;
 import net.hanas_cards.util.GradingSystem;
-import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsage;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
 import net.minecraft.util.*;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 import java.util.Objects;
@@ -70,11 +68,10 @@ public class CardItem extends Item {
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack originalStack = player.getStackInHand(hand);
-        NbtCompound nbt = originalStack.getOrCreateNbt();
-        CardComponent component = CardComponent.fromNbt(nbt);
+        CardComponent component = originalStack.get(ModDataComponentTypes.CARD_COMPONENT);
 
         if (!world.isClient) {
-            if (component == null || component.getGrading() == 0) {
+            if (component == null) {
                 if (originalStack.getCount() == 1) {
                     ItemStack gradedCard = getEmptiedStack(originalStack, player);
                     player.setStackInHand(hand, gradedCard);
@@ -83,12 +80,17 @@ public class CardItem extends Item {
                 } else {
                     ItemStack gradedCard = originalStack.split(1);
                     gradedCard.setCount(1);
-                    CardComponent newComponent = createNewGrading();
-                    NbtCompound newNbt = new NbtCompound();
-                    newComponent.writeNbt(newNbt);
-                    gradedCard.setNbt(newNbt);
+                    gradedCard.set(ModDataComponentTypes.CARD_COMPONENT, createNewGrading());
+                    ItemStack exchangedStack = ItemUsage.exchangeStack(originalStack, player, gradedCard);
+
+                    if (originalStack.isEmpty()) {
+                        player.setStackInHand(hand, ItemStack.EMPTY);
+                    } else {
+                        player.setStackInHand(hand, originalStack);
+                    }
+
                     player.sendMessage(Text.literal("Card graded!").formatted(Formatting.GREEN), true);
-                    return TypedActionResult.success(gradedCard, world.isClient());
+                    return TypedActionResult.success(exchangedStack, world.isClient());
                 }
             } else {
                 player.sendMessage(Text.literal("This card is already graded!").formatted(Formatting.RED), true);
@@ -99,18 +101,9 @@ public class CardItem extends Item {
     }
 
     public static ItemStack getEmptiedStack(ItemStack stack, PlayerEntity player) {
-        // Split the stack to create a new card item with a count of 1
         ItemStack gradedCard = stack.split(1);
         gradedCard.setCount(1);
-
-        // Create a new grading component and store it in the NBT
-        NbtCompound newNbt = gradedCard.getOrCreateNbt();
-        CardComponent newComponent = createNewGrading();  // Generates a new graded card component
-        newComponent.writeNbt(newNbt);  // Write the component to the NBT
-
-        // Set the NBT data to the newly created graded card
-        gradedCard.setNbt(newNbt);
-
+        gradedCard.set(ModDataComponentTypes.CARD_COMPONENT, createNewGrading());
         return gradedCard;
     }
 
@@ -134,7 +127,7 @@ public class CardItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
         tooltip.add(Text.literal(""));
         tooltip.add(Text.literal("---------------------"));
 
@@ -156,16 +149,18 @@ public class CardItem extends Item {
         tooltip.add(Text.translatable("§fVariant: §7§l" + toTitleCase(boldedVariant)));
         tooltip.add(Text.literal("---------------------"));
 
-        NbtCompound nbt = stack.getNbt();
-        if (nbt != null) {
-            CardComponent component = CardComponent.fromNbt(nbt);
-            String gradingDescription = GradingSystem.getGradeDescription(component.getGrading());
-            tooltip.add(Text.literal("Grading: §l" + component.getGrading()));
-            tooltip.add(Text.literal("Description: §l" + gradingDescription));
+        if (stack.get(ModDataComponentTypes.CARD_COMPONENT) != null) {
+            CardComponent component = stack.get(ModDataComponentTypes.CARD_COMPONENT);
+            tooltip.add(Text.literal("§fGrading: §7§l"));
+            tooltip.add(Text.literal(String.valueOf(Objects.requireNonNull(component).getGrading()))
+                    .formatted(Formatting.GRAY, Formatting.BOLD));
+            tooltip.add(Text.literal("§fGrading Quality: §7§l"));
+            tooltip.add(Text.literal(GradingSystem.getGradeDescription(component.getGrading()))
+                    .formatted(Formatting.GRAY, Formatting.BOLD));
+            tooltip.add(Text.literal("---------------------"));
         }
-        super.appendTooltip(stack, world, tooltip, context);
 
-        super.appendTooltip(stack, world, tooltip, context);
+        super.appendTooltip(stack, context, tooltip, type);
     }
 
 

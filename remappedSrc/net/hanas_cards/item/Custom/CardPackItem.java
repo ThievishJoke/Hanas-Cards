@@ -2,11 +2,11 @@ package net.hanas_cards.item.Custom;
 
 import net.hanas_cards.item.CardPackSettings;
 import net.hanas_cards.util.CustomCardRarity;
-import net.minecraft.client.item.TooltipContext;
+import net.minecraft.component.DataComponentTypes;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
+import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.registry.entry.RegistryEntryList;
@@ -20,7 +20,6 @@ import net.minecraft.util.Rarity;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -116,23 +115,21 @@ public class CardPackItem extends Item {
         return TypedActionResult.success(stack);
     }
 
-    private String getRarityFromItem(ItemStack itemStack) {
-        if (itemStack.hasNbt()) {
-            NbtCompound nbt = itemStack.getNbt();
 
-            // Assuming you're storing rarity as a string in NBT
-            if (nbt.contains("rarity", NbtCompound.STRING_TYPE)) {
-                String rarity = nbt.getString("rarity"); // Fetch the rarity as a string
-                System.out.println("Item rarity found: " + rarity); // Log the found rarity
-                return rarity;
-            } else {
-                System.out.println("Item rarity not found in NBT.");
-            }
+
+    private String getRarityFromItem(ItemStack itemStack) {
+        // Retrieve the rarity component from the item stack
+        Rarity rarityComponent = itemStack.getComponents().getOrDefault(DataComponentTypes.RARITY, null);
+
+        if (rarityComponent != null) {
+            String rarity = rarityComponent.name(); // Use the name() method to get the rarity string
+            System.out.println("Item rarity found: " + rarity); // Log the found rarity
+            return rarity;
         } else {
-            System.out.println("Item does not have NBT.");
+            System.out.println("Item rarity not found."); // Log if rarity is not found
         }
 
-        return "UNKNOWN"; // Default return if no rarity is found
+        return null; // Return null if the rarity component is not present
     }
 
     private ItemStack getRandomCard(List<ItemStack> possibleItems, Random random) {
@@ -175,8 +172,8 @@ public class CardPackItem extends Item {
     }
 
     @Override
-    public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        super.appendTooltip(stack, world, tooltip, context);
+    public void appendTooltip(ItemStack stack, TooltipContext context, List<Text> tooltip, TooltipType type) {
+        super.appendTooltip(stack, context, tooltip, type);
         int numberOfCards = settings.getNumberOfCards();
 
         List<TagKey<Item>> unweightedTags = settings.getUnweightedTags();

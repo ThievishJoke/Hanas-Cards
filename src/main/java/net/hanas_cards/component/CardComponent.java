@@ -3,47 +3,64 @@ package net.hanas_cards.component;
 import java.util.Arrays;
 import java.util.List;
 
-import com.mojang.serialization.Codec;
-import com.mojang.serialization.codecs.RecordCodecBuilder;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.world.World;
-
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtElement;
+import net.minecraft.nbt.NbtList;
+import net.minecraft.nbt.NbtString;
 
 public class CardComponent {
     private final float grading;
     private final String description;
     private final String[] tags;
 
-    public static final Codec<CardComponent> CODEC = RecordCodecBuilder.create(
-            instance -> instance.group(
-                    Codec.FLOAT.fieldOf("grading").forGetter(CardComponent::getGrading),
-                    Codec.STRING.fieldOf("description").forGetter(CardComponent::getDescription),
-                    Codec.STRING.listOf().fieldOf("tags").forGetter(CardComponent::getTagList) // Modified getter here
-            ).apply(instance, CardComponent::new)
-    );
+    // Define a default component with sensible defaults
+    public static final CardComponent DEFAULT = new CardComponent(0.0f, "", List.of(new String[]{}));
 
-    public static final CardComponent DEFAULT = new CardComponent(0, "", List.of());
-
-    // Constructor to initialize grading, description, and tags
     public CardComponent(float grading, String description, List<String> tags) {
-        this.grading = grading; // Set the grading value
-        this.description = description; // Set the description value
-        this.tags = tags.toArray(new String[0]); // Convert List to array
+        this.grading = grading;
+        this.description = description;
+        this.tags = tags.toArray(new String[0]);
     }
 
-    // Getter for grading
     public float getGrading() {
         return grading;
     }
 
-    // Getter for description
     public String getDescription() {
         return description;
     }
 
-    // Getter that returns a copy of the tags array as a list
     public List<String> getTagList() {
-        return Arrays.asList(tags); // Convert array to List
+        return Arrays.asList(tags);
+    }
+
+    public void writeNbt(NbtCompound nbt) {
+        nbt.putFloat("grading", this.grading);
+        nbt.putString("description", this.description);
+
+        // Store the tags array as an NbtList
+        NbtList tagList = new NbtList();
+        for (String tag : this.tags) {
+            tagList.add(NbtString.of(tag)); // Wrap each tag as an NbtString
+        }
+        nbt.put("tags", tagList); // Add the list to the compound under "tags"
+    }
+
+    public static CardComponent fromNbt(NbtCompound nbt) {
+        float grading = nbt.getFloat("grading");
+        String description = nbt.getString("description");
+
+        // Retrieve the list of tags
+        NbtList tagList = nbt.getList("tags", NbtElement.STRING_TYPE); // STRING_TYPE corresponds to NbtString
+        String[] tags = new String[tagList.size()];
+        for (int i = 0; i < tagList.size(); i++) {
+            tags[i] = tagList.getString(i); // Get the string from each NbtString
+        }
+
+        return new CardComponent(grading, description, List.of(tags));
+    }
+
+    public static CardComponent getDefault() {
+        return new CardComponent(0.0f, "", List.of());
     }
 }

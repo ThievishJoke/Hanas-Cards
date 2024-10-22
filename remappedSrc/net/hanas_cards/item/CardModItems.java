@@ -537,21 +537,12 @@ public class CardModItems {
                     String variant = "Tamed with §" + getWolfCollarColor(color) + color + " Collar";
                     String collar_path = "hanas_cards.collars/collar_" + color.toLowerCase().replace(" ", "_");
 
-                    Identifier baseTexture = new Identifier("hanas_cards", "item/wolf_" + wolfBreed.toLowerCase().replace(" ", "_") + "_card");
-                    Identifier collarTexture = new Identifier("hanas_cards", collar_path);
-
                     Item tamedWolfCard = new TamedWolfCard(
                             new Item.Settings(),
-                            "§2Overworld",
-                            "Wolf",
-                            variant,
-                            Rarity.COMMON,
-                            wolfBreed.toLowerCase().replace(" ", "_"),
-                            collar_color,
-                            baseTexture,
-                            collarTexture
+                            "§2Overworld", "Wolf", variant, Rarity.COMMON, wolfBreed.toLowerCase().replace(" ","_"), collar_color,
+                            Identifier.ofVanilla("hanas_cards.item/wolf_" + wolfBreed.toLowerCase().replace(" ","_") + "_card"),
+                            Identifier.ofVanilla(collar_path)
                     );
-
                     //System.out.println("Successfully registered Tamed Wolf " + wolfBreed + " card: " + cardName);
 
                     registerItem(cardName, tamedWolfCard);

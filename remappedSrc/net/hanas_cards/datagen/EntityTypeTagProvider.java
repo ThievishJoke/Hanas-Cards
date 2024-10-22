@@ -18,6 +18,7 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(CardModTags.Entities.PASSIVE_MOB_TAG)
                 .add(EntityType.ALLAY)
+                .add(EntityType.ARMADILLO)
                 .add(EntityType.AXOLOTL)
                 .add(EntityType.CAMEL)
                 .add(EntityType.CAT)
@@ -69,6 +70,8 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
         ;
         getOrCreateTagBuilder(CardModTags.Entities.HOSTILE_MOB_TAG)
                 .add(EntityType.BLAZE)
+                .add(EntityType.BOGGED)
+                .add(EntityType.BREEZE)
                 .add(EntityType.CREEPER)
                 .add(EntityType.ELDER_GUARDIAN)
                 .add(EntityType.ENDERMITE)
@@ -106,6 +109,7 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
         ;
         getOrCreateTagBuilder(CardModTags.Entities.MOB_TAG)
                 .add(EntityType.ALLAY)
+                .add(EntityType.ARMADILLO)
                 .add(EntityType.AXOLOTL)
                 .add(EntityType.CAMEL)
                 .add(EntityType.CAT)
@@ -153,6 +157,8 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
                 .add(EntityType.WOLF)
                 .add(EntityType.ZOMBIFIED_PIGLIN)
                 .add(EntityType.BLAZE)
+                .add(EntityType.BOGGED)
+                .add(EntityType.BREEZE)
                 .add(EntityType.CREEPER)
                 .add(EntityType.ELDER_GUARDIAN)
                 .add(EntityType.ENDERMITE)
@@ -184,6 +190,7 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
         ;
         getOrCreateTagBuilder(CardModTags.Entities.OVERWORLD_MOB_TAG)
                 .add(EntityType.ALLAY)
+                .add(EntityType.ARMADILLO)
                 .add(EntityType.AXOLOTL)
                 .add(EntityType.CAMEL)
                 .add(EntityType.CAT)
@@ -227,6 +234,8 @@ public class EntityTypeTagProvider extends FabricTagProvider.EntityTypeTagProvid
                 .add(EntityType.SPIDER)
                 .add(EntityType.TRADER_LLAMA)
                 .add(EntityType.WOLF)
+                .add(EntityType.BOGGED)
+                .add(EntityType.BREEZE)
                 .add(EntityType.CREEPER)
                 .add(EntityType.ELDER_GUARDIAN)
                 .add(EntityType.EVOKER)

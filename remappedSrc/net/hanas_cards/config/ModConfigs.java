@@ -175,6 +175,7 @@ public class ModConfigs {
     private static List<EntityType<?>> defaultOverworldEntities() {
         return List.of(
                 EntityType.ALLAY,
+                EntityType.ARMADILLO,
                 EntityType.AXOLOTL,
                 EntityType.BAT,
                 EntityType.CAMEL,
@@ -220,6 +221,8 @@ public class ModConfigs {
                 EntityType.WOLF,
                 EntityType.CAVE_SPIDER,
                 EntityType.SPIDER,
+                EntityType.BOGGED,
+                EntityType.BREEZE,
                 EntityType.CREEPER,
                 EntityType.ELDER_GUARDIAN,
                 EntityType.EVOKER,

@@ -170,7 +170,7 @@ public class SimpleConfig {
      * @return value corresponding to the given key
      * @see SimpleConfig#getOrDefault
      */
-    //@Deprecated
+    @Deprecated
     public String get(String key) {
         return config.get(key);
     }
