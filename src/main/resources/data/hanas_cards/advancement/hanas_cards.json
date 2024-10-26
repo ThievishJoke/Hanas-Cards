@@ -1,0 +1,17 @@
+{
+    "display": {
+        "title": "Hanas Cards",
+        "description": "Adds Collectable Cards",
+        "icon": {
+            "id": "minecraft:paper"
+        },
+        "show_toast": false,
+        "announce_to_chat": false
+    },
+    "parent": "hanas_cards:root",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

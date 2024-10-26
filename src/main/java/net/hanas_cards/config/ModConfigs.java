@@ -82,17 +82,17 @@ public class ModConfigs {
         configs.addKeyValuePair(
                 new Pair<>("Enable.enableDebug", false), "Enable debug");
 
-        // Entity lists for each dimension
+        // Use default entity lists for each dimension (converted to strings)
         configs.addKeyValuePair(
-                new Pair<>("Entities.overworld", List.of("minecraft:cow", "minecraft:sheep")),
+                new Pair<>("Entities.overworld", entityListToString(defaultOverworldEntities())),
                 "List of entities for overworld pack drops (use entity IDs)"
         );
         configs.addKeyValuePair(
-                new Pair<>("Entities.nether", List.of("minecraft:blaze", "minecraft:ghast")),
+                new Pair<>("Entities.nether", entityListToString(defaultNetherEntities())),
                 "List of entities for nether pack drops (use entity IDs)"
         );
         configs.addKeyValuePair(
-                new Pair<>("Entities.end", List.of("minecraft:enderman", "minecraft:shulker")),
+                new Pair<>("Entities.end", entityListToString(defaultEndEntities())),
                 "List of entities for end pack drops (use entity IDs)"
         );
     }
@@ -131,6 +131,14 @@ public class ModConfigs {
             allEntities.addAll(netherEntities);
             allEntities.addAll(endEntities);
         }
+    }
+
+    private static List<String> entityListToString(List<EntityType<?>> entities) {
+        List<String> entityNames = new ArrayList<>();
+        for (EntityType<?> entity : entities) {
+            entityNames.add(EntityType.getId(entity).toString()); // Convert EntityType to its ID (String)
+        }
+        return entityNames;
     }
 
     /**
@@ -281,92 +289,4 @@ public class ModConfigs {
     public static void printConfigStatus() {
         System.out.println("All " + configs.getConfigsList().size() + " configs have been set properly");
     }
-
-    /*
-        allEntities  = List.of(
-                EntityType.ALLAY,
-                EntityType.ARMADILLO,
-                EntityType.AXOLOTL,
-                EntityType.BAT,
-                EntityType.CAMEL,
-                EntityType.CAT,
-                EntityType.CHICKEN,
-                EntityType.COD,
-                EntityType.COW,
-                EntityType.DONKEY,
-                EntityType.FROG,
-                EntityType.GLOW_SQUID,
-                EntityType.HORSE,
-                EntityType.MOOSHROOM,
-                EntityType.MULE,
-                EntityType.OCELOT,
-                EntityType.PARROT,
-                EntityType.PIG,
-                EntityType.PUFFERFISH,
-                EntityType.RABBIT,
-                EntityType.SALMON,
-                EntityType.SHEEP,
-                EntityType.SKELETON_HORSE,
-                EntityType.SNIFFER,
-                EntityType.SNOW_GOLEM,
-                EntityType.SQUID,
-                EntityType.TADPOLE,
-                EntityType.TROPICAL_FISH,
-                EntityType.TURTLE,
-                EntityType.VILLAGER,
-                EntityType.WANDERING_TRADER,
-                EntityType.ZOMBIE_HORSE,
-                EntityType.BEE,
-                EntityType.DOLPHIN,
-                EntityType.DROWNED,
-                EntityType.FOX,
-                EntityType.GOAT,
-                EntityType.IRON_GOLEM,
-                EntityType.LLAMA,
-                EntityType.PANDA,
-                EntityType.POLAR_BEAR,
-                EntityType.TURTLE,
-                EntityType.TRADER_LLAMA,
-                EntityType.WOLF,
-                EntityType.CAVE_SPIDER,
-                EntityType.SPIDER,
-                EntityType.BOGGED,
-                EntityType.BREEZE,
-                EntityType.CREEPER,
-                EntityType.ELDER_GUARDIAN,
-                EntityType.EVOKER,
-                EntityType.GUARDIAN,
-                EntityType.HUSK,
-                EntityType.PHANTOM,
-                EntityType.PILLAGER,
-                EntityType.RAVAGER,
-                EntityType.SILVERFISH,
-                EntityType.SKELETON,
-                EntityType.SLIME,
-                EntityType.STRAY,
-                EntityType.VEX,
-                EntityType.VINDICATOR,
-                EntityType.WARDEN,
-                EntityType.WITCH,
-                EntityType.ZOMBIE,
-                EntityType.ZOMBIE_VILLAGER,
-                EntityType.STRIDER,
-                EntityType.PIGLIN,
-                EntityType.ZOMBIFIED_PIGLIN,
-                EntityType.BLAZE,
-                EntityType.GHAST,
-                EntityType.HOGLIN,
-                EntityType.MAGMA_CUBE,
-                EntityType.PIGLIN_BRUTE,
-                EntityType.SKELETON,
-                EntityType.WITHER,
-                EntityType.WITHER_SKELETON,
-                EntityType.ZOGLIN,
-                EntityType.ENDERMITE,
-                EntityType.ENDERMAN,
-                EntityType.ENDER_DRAGON,
-                EntityType.SHULKER
-        );
-        */
-
 }
