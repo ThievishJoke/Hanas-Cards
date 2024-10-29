@@ -17,5 +17,5 @@ Mod documentation here on the [wiki](https://github.com/ThievishJoke/Hanas-Cards
 Official Discord community for all of my mods [here](https://discord.gg/yW2zQJp4bM)
 
 ## Donate
-You can donate here at my ko-fi
+You can donate here at my ko-fi\
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/W7W515DO4B)
