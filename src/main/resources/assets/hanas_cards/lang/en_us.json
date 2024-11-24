@@ -566,5 +566,6 @@
   "item.cardItem.hanas_cards.name": "Card ✨",
 
   "tooltip.hanas_cards.flying_pig_card": "I Can't Believe It",
-  "tooltip.hanas_cards.flying_pig_card.shift": "§lHold §7§lSHIFT §r§lfor more"
+  "tooltip.hanas_cards.flying_pig_card.shift": "§lHold §7§lSHIFT §r§lfor more",
+  "container.card_inventory": "Card"
 }
