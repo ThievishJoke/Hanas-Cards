@@ -1,7 +1,7 @@
 plugins {
 	id 'fabric-loom' version '1.9-SNAPSHOT'
 	id 'maven-publish'
-	id 'com.modrinth.minotaur' version '2.+'
+	id 'me.modmuss50.mod-publish-plugin' version '0.4.5'
 }
 
 version = project.mod_version
@@ -39,16 +39,6 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 
 	//modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
-}
-
-modrinth {
-	token = System.getenv("MODRINTH_TOKEN")
-	projectId = "ZNLNdYWj"
-	versionNumber = project.mod_version
-	versionType = "release"
-	uploadFile = remapJar
-	gameVersions = ["1.21.1"]
-	loaders = ["fabric"]
 }
 
 processResources {
