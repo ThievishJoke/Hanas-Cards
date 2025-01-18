@@ -4,6 +4,7 @@ on:
   push:
     tags:
       - '*'  # Runs on tag pushes (e.g., v1.0.0)
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
 
 jobs:
   publish:
@@ -21,19 +22,13 @@ jobs:
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
 
-      - name: Debug Environment Variables
-        run: |
-          if [[ -z "${MODRINTH_TOKEN}" ]]; then
-            echo "MODRINTH_TOKEN is NOT set"
-            exit 1
-          else
-            echo "MODRINTH_TOKEN is set"
-          fi
-        env:
-          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-
       - name: Build the Mod
         run: ./gradlew build
 
+      - name: Debug Environment Variables
+        run: env | sort  # Prints all environment variables for debugging
+
       - name: Publish to Modrinth
-        run: MODRINTH_TOKEN=${{ secrets.MODRINTH_TOKEN }} ./gradlew modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: ./gradlew modrinth --stacktrace --info
