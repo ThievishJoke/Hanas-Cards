@@ -41,8 +41,6 @@ dependencies {
 	//modImplementation "com.terraformersmc:modmenu:${project.mod_menu_version}"
 }
 
-println "Modrinth Token: " + System.getenv("MODRINTH_TOKEN")
-
 modrinth {
 	token = System.getenv("MODRINTH_TOKEN")
 	projectId = "ZNLNdYWj"
