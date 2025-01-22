@@ -3,7 +3,7 @@
         "title": "Hanas Cards",
         "description": "Adds Collectable Cards",
         "icon": {
-            "id": "minecraft:paper"
+            "id": "hanas_cards:creeper_card"
         },
         "show_toast": false,
         "announce_to_chat": false
