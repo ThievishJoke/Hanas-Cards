@@ -1,6 +1,7 @@
 package net.hanas_cards.item;
 
 import net.hanas_cards.HanasCardsMod;
+import net.hanas_cards.item.Custom.CardBoxItem;
 import net.hanas_cards.item.Custom.CardItem;
 import net.hanas_cards.item.Custom.FlyingPigCard;
 import net.hanas_cards.item.Custom.TamedWolfCard;
@@ -63,6 +64,15 @@ public class CardModItems {
     //public static final Item ENDSTONE_SOURCE_CARD = registerItem("endstone_source_card",
     //        new SourceCardItem(new Item.Settings(), SourceType.ENDSTONE, 1, Rarity.COMMON));
 
+    public static final Item SERIES_ONE_BOOSTER_BOX = registerItem("series_one_booster_box",
+            new CardBoxItem(new Item.Settings(), Map.of(
+                    CardModPacks.SERIES_ONE_CARD_PACK, 6,
+                    CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK, 2,
+                    CardModPacks.SERIES_ONE_EXPANSION_TWO_CARD_PACK, 2
+            )));
+
+    public static final Item CARD_SCRAP = registerItem("card_scrap",
+            new Item(new Item.Settings()));
 
     //Overworld
     //Passive

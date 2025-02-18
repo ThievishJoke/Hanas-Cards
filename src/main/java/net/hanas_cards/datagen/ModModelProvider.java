@@ -38,6 +38,10 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK, Models.GENERATED);
         itemModelGenerator.register(CardModPacks.SERIES_ONE_EXPANSION_TWO_CARD_PACK, Models.GENERATED);
 
+        itemModelGenerator.register(CardModItems.SERIES_ONE_BOOSTER_BOX, Models.GENERATED);
+
+        itemModelGenerator.register(CardModItems.CARD_SCRAP, Models.GENERATED);
+
         itemModelGenerator.register(CardModItems.ALLAY_CARD, Models.GENERATED);
         itemModelGenerator.register(CardModItems.BURNING_ALLAY_CARD, Models.GENERATED);
 
@@ -210,7 +214,7 @@ public class ModModelProvider extends FabricModelProvider {
                     itemModelGenerator.register(item, Models.GENERATED);
                     if (ModConfigs.enableDebug) {
                         System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
-                    };
+                    }
                 } else if (ModConfigs.enableDebug) {
                     System.err.println("Item not found for: " + cardName + " In ModelProvider");
                 }
@@ -278,7 +282,7 @@ public class ModModelProvider extends FabricModelProvider {
                     itemModelGenerator.register(item, Models.GENERATED);
                     if (ModConfigs.enableDebug) {
                         System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
-                    };
+                    }
                 } else if (ModConfigs.enableDebug) {
                     System.err.println("Item not found for: " + cardName + " In ModelProvider");
                 }
@@ -352,7 +356,7 @@ public class ModModelProvider extends FabricModelProvider {
                 itemModelGenerator.register(item, Models.GENERATED);
                 if (ModConfigs.enableDebug) {
                     System.out.println("Successfully registered model for: " + cardName + " In ModelProvider");
-                };
+                }
             } else if (ModConfigs.enableDebug) {
                 System.err.println("Item not found for: " + cardName + " In ModelProvider");
             }

@@ -7,7 +7,6 @@ import net.hanas_cards.util.GradingSystem;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUsage;
 import net.minecraft.item.tooltip.TooltipType;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Text;
@@ -78,19 +77,18 @@ public class CardItem extends Item {
                     player.sendMessage(Text.literal("Card graded!").formatted(Formatting.GREEN), true);
                     return TypedActionResult.success(gradedCard, world.isClient());
                 } else {
-                    ItemStack gradedCard = originalStack.split(1);
-                    gradedCard.setCount(1);
-                    gradedCard.set(ModDataComponentTypes.CARD_COMPONENT, createNewGrading());
-                    ItemStack exchangedStack = ItemUsage.exchangeStack(originalStack, player, gradedCard);
+                    ItemStack singleCard = originalStack.split(1);
+                    singleCard.setCount(1);
+                    singleCard.set(ModDataComponentTypes.CARD_COMPONENT, createNewGrading());
 
-                    if (originalStack.isEmpty()) {
-                        player.setStackInHand(hand, ItemStack.EMPTY);
-                    } else {
-                        player.setStackInHand(hand, originalStack);
+                    player.setStackInHand(hand, originalStack);
+
+                    if (!player.getInventory().insertStack(singleCard)) {
+                        player.dropItem(singleCard, false);
                     }
 
                     player.sendMessage(Text.literal("Card graded!").formatted(Formatting.GREEN), true);
-                    return TypedActionResult.success(exchangedStack, world.isClient());
+                    return TypedActionResult.success(originalStack, world.isClient());
                 }
             } else {
                 player.sendMessage(Text.literal("This card is already graded!").formatted(Formatting.RED), true);

@@ -2,7 +2,6 @@ package net.hanas_cards.item;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.hanas_cards.HanasCardsMod;
-import net.minecraft.data.client.Models;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
@@ -27,6 +26,8 @@ public class CardModItemGroups {
                         entries.add(CardModPacks.SERIES_ONE_CARD_PACK);
                         entries.add(CardModPacks.SERIES_ONE_EXPANSION_ONE_CARD_PACK);
                         entries.add(CardModPacks.SERIES_ONE_EXPANSION_TWO_CARD_PACK);
+
+                        entries.add(SERIES_ONE_BOOSTER_BOX);
 
                         //entries.add(FLINT_SOURCE_CARD);
                         //entries.add(STONE_SOURCE_CARD);
