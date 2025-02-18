@@ -71,8 +71,10 @@ public class ModConfigs {
                 new Pair<>("DropChance.end", 0.025f), "End drop chance, Default[0.025F]");
         configs.addKeyValuePair(
                 new Pair<>("DropChance.series", 0.075f), "Series drop chance, Default[0.075F]");
+        configs.addKeyValuePair(
+                new Pair<>("DropChance.boosterBox", 0.0025f), "Booster Box drop chance, Default[0.0025F]");
 
-        // Enable/Disable drops for each dimension
+        // Enable/Disable drops
         configs.addKeyValuePair(
                 new Pair<>("Enable.overworldDrops", true), "Enable Overworld Pack drops");
         configs.addKeyValuePair(
@@ -81,6 +83,8 @@ public class ModConfigs {
                 new Pair<>("Enable.endDrops", true), "Enable End Pack drops");
         configs.addKeyValuePair(
                 new Pair<>("Enable.seriesDrops", true), "Enable Series Pack drops");
+        configs.addKeyValuePair(
+                new Pair<>("Enable.boosterDrops", true), "Enable Booster Box drops");
 
         // Mod/Debug
         configs.addKeyValuePair(
@@ -112,7 +116,7 @@ public class ModConfigs {
         endDropChance = (float) CONFIG.getOrDefault("DropChance.end", 0.025F);
         seriesDropChance = (float) CONFIG.getOrDefault("DropChance.series", 0.075F);
 
-        boosterBoxChance = (float) CONFIG.getOrDefault("DropChance.boosterBox", 0.0125);
+        boosterBoxChance = (float) CONFIG.getOrDefault("DropChance.boosterBox", 0.0025);
 
         // Assigning drop toggles
         enableOverworldDrops = (boolean) CONFIG.getOrDefault("Enable.overworldDrops", true);
