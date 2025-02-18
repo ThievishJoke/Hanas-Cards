@@ -21,11 +21,15 @@ public class ModConfigs {
     public static float endDropChance;
     public static float seriesDropChance;
 
+    public static float boosterBoxChance;
+
     // Flags to enable/disable specific drops.
     public static boolean enableOverworldDrops;
     public static boolean enableNetherDrops;
     public static boolean enableEndDrops;
     public static boolean enableSeriesDrops;
+
+    public static boolean enableBoosterBoxDrops;
 
     // Configurable entity groups (modifiable via config).
     public static List<EntityType<?>> overworldEntities;
@@ -108,11 +112,15 @@ public class ModConfigs {
         endDropChance = (float) CONFIG.getOrDefault("DropChance.end", 0.025F);
         seriesDropChance = (float) CONFIG.getOrDefault("DropChance.series", 0.075F);
 
+        boosterBoxChance = (float) CONFIG.getOrDefault("DropChance.boosterBox", 0.0125);
+
         // Assigning drop toggles
         enableOverworldDrops = (boolean) CONFIG.getOrDefault("Enable.overworldDrops", true);
         enableNetherDrops = (boolean) CONFIG.getOrDefault("Enable.netherDrops", true);
         enableEndDrops = (boolean) CONFIG.getOrDefault("Enable.endDrops", true);
         enableSeriesDrops = (boolean) CONFIG.getOrDefault("Enable.seriesDrops", true);
+
+        enableBoosterBoxDrops = (boolean) CONFIG.getOrDefault("Enable.boosterDrops", true);
 
         // Assigning debug mode
         enableDebug = (boolean) CONFIG.getOrDefault("Enable.enableDebug", false);

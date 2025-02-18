@@ -2,13 +2,16 @@ package net.hanas_cards.util;
 
 import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.hanas_cards.config.ModConfigs;
+import net.hanas_cards.item.CardModItems;
 import net.hanas_cards.item.CardModPacks;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.loot.LootPool;
 import net.minecraft.loot.condition.KilledByPlayerLootCondition;
 import net.minecraft.loot.condition.RandomChanceLootCondition;
 import net.minecraft.loot.entry.ItemEntry;
 import net.minecraft.loot.provider.number.ConstantLootNumberProvider;
+import net.minecraft.loot.provider.number.UniformLootNumberProvider;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -28,7 +31,6 @@ public class LootTableModifier {
                                 .with(ItemEntry.builder(CardModPacks.OVERWORLD_MOB_CARD_PACK))
                                 .conditionally(RandomChanceLootCondition.builder(ModConfigs.overworldDropChance))
                                 .conditionally(KilledByPlayerLootCondition.builder());
-
                         tableBuilder.pool(pool);
                     }
                 }
@@ -70,6 +72,18 @@ public class LootTableModifier {
                                 .conditionally(RandomChanceLootCondition.builder(ModConfigs.seriesDropChance))
                                 .conditionally(KilledByPlayerLootCondition.builder());
 
+                        tableBuilder.pool(pool);
+                    }
+                }
+            }
+            if (ModConfigs.enableBoosterBoxDrops) {
+                for (EntityType<?> entity : ModConfigs.allEntities) {
+                    if (entity.getLootTableId().equals(key) && source.isBuiltin()) {
+                        LootPool.Builder pool = LootPool.builder()
+                                .rolls(UniformLootNumberProvider.create(0F, 1.0F))
+                                .with(ItemEntry.builder(CardModItems.SERIES_ONE_BOOSTER_BOX))
+                                .conditionally(RandomChanceLootCondition.builder(ModConfigs.boosterBoxChance))
+                                .conditionally(KilledByPlayerLootCondition.builder());
                         tableBuilder.pool(pool);
                     }
                 }
