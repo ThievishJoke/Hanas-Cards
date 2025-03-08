@@ -7,7 +7,6 @@
 Hanas Cards is a Minecraft mod that adds many card collectibles to the game.
 
 # Download Page
-# Hana's Cobblemon Pack
 
 [![Modrinth Downloads](https://img.shields.io/modrinth/dt/hanas-cards?logo=modrinth&label=Downloads&labelColor=15151e&color=00af5c&style=flat-square)](https://modrinth.com/mod/hanas-cards)
 [![Modrinth Version](https://img.shields.io/modrinth/v/hanas-cards?label=Version&labelColor=15151e&color=007daf&style=flat-square)](https://modrinth.com/modpack/hanas-cards/version/latest)
