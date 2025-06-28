@@ -54,6 +54,9 @@ public class CardModTags {
         public static final TagKey<Item> NEUTRAL_MOB_CARDS = createTag("neutral_mob_cards");
         public static final TagKey<Item> HOSTILE_MOB_CARDS = createTag("hostile_mob_cards");
 
+        // Animal Based
+        public static final TagKey<Item> SHEEP_CARDS = createTag("sheep_mob_cards");
+
         // Dimension Based
         public static final TagKey<Item> OVERWORLD_MOB_CARDS = createTag("overworld_mob_cards");
         public static final TagKey<Item> NETHER_MOB_CARDS = createTag("nether_mob_cards");

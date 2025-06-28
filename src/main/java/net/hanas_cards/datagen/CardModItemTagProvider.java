@@ -1051,6 +1051,7 @@ public class CardModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 getOrCreateTagBuilder(CardModTags.Items.COMMON_CARDS).add(item);
                 getOrCreateTagBuilder(CardModTags.Items.PASSIVE_MOB_CARDS).add(item);
                 getOrCreateTagBuilder(CardModTags.Items.OVERWORLD_MOB_CARDS).add(item);
+                getOrCreateTagBuilder(CardModTags.Items.SHEEP_CARDS).add(item);
             } else {
                 // Log error
                 System.err.println("Item not found for: " + cardName + " in CardModItemTagProvider");

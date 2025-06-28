@@ -29,6 +29,8 @@ public class CardModItemGroups {
 
                         entries.add(SERIES_ONE_BOOSTER_BOX);
 
+                        entries.add(CARD_SCRAP);
+
                         //entries.add(FLINT_SOURCE_CARD);
                         //entries.add(STONE_SOURCE_CARD);
                         //entries.add(IRON_SOURCE_CARD);
@@ -267,7 +269,7 @@ public class CardModItemGroups {
                                 Item item = CardModItems.get(cardName);
                                 if (item != null) {
                                     entries.add(item);
-                                    System.out.println("Successfully added tamed " + wolfBreed + " wolf card: " + cardName + "To Item Group");
+                                    //System.out.println("Successfully added tamed " + wolfBreed + " wolf card: " + cardName + "To Item Group");
                                 } else {
                                     // Error
                                     System.err.println("Item not found for: " + cardName + " In CardModItemGroups");
@@ -348,7 +350,6 @@ public class CardModItemGroups {
                         entries.add(SHULKER_CARD);
 
                         entries.add(INVALID_CARD);
-
 
                 }).build());
 
